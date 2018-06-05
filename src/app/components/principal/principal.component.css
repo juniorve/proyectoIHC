@@ -1,0 +1,84 @@
+/* img{
+    margin:auto 30px;
+    width: 250px;
+    height: 250px;
+
+} */
+#carrusel .izquierda_flecha{
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px; 
+    }
+
+#carrusel .derecha_flecha{
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+
+
+#carrusel{
+    float:left;
+    width:1200px;
+    overflow:hidden;
+    height:251px;
+    position:relative;
+    margin-top:20px; 
+    margin-left: 3%;
+    margin-right: 3%; 
+    flex: auto;
+    }
+
+
+.carrusel{
+    width:4000px;
+    left:0px;
+    position:absolute;
+    z-index:0
+    }
+
+.carrusel div{
+    float: left;
+    height: 250px;
+    margin-right: 5px;
+    width: 300px;
+    text-align:center;
+}
+.carrusel .img_carrusel{
+    cursor:pointer;
+    height: 248px;
+    width: 300px;
+}
+
+#content {
+    float:left;
+    width:600px;
+    margin-bottom:40px;
+    margin:0px auto;
+}
+
+.product {
+    border:#CCCCCC 1px solid;
+}
+
+.fa{
+    color: white;
+    font-size: 25px; 
+}
+
+.fa:hover{
+    color:#FFFFE0;
+}
+ 
+.favoritos{
+    font-weight: bold;
+    text-align: center; 
+    margin-top: 50px;
+    font-size: 22px;
+    margin-bottom: -12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

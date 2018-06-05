@@ -1,0 +1,103 @@
+
+
+.usuario{
+    color:#AEB6BF;
+  }
+  
+  nav{
+      /* box-shadow: 2px 2px 2px 2px #AEB6BF; */
+   /*    box-shadow: 0 6px 10px rgba(93, 70, 232, 0.15); */
+   box-shadow: 0 3px 5px gray;
+      height: 65px; 
+  }
+  
+  #header-container,#info-container {
+    background-color: #A4A4A4;
+    color: white;
+  }
+  
+  #info-container h4 {
+    text-align: center;
+  }
+  
+  #productsCarousel img {
+    margin: 0 auto;
+  }
+  
+  a{
+    color: #AEB6BF;
+  }
+  
+  a:hover{
+    color: black;
+  }
+  
+  .actived{
+      border-bottom: 4px solid #AEB6BF;
+      padding-bottom: 3px;
+  }
+  
+  .menu{
+    background-color: white;
+  }
+  
+  h1,h2,h3,h4,h5,h6{
+      font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-weight: 800;
+  }
+  
+/* 
+  NUEVOS ESTILOS */
+  .name{
+    font-weight: bold;
+    margin-top: 6px;
+    font-size: 21px;
+  }
+
+  .vista{
+    color:#B22222;
+  }
+
+  .paladar{
+    margin-left:4px;
+  
+    color:#B22222;}
+
+  .icono{
+    height: 48px;
+    width: 50px;
+    margin-top: -5px;
+    margin-right: 4px;
+  }
+
+  .i_foro{
+    font-size: 20px;
+  }
+
+  .foro{
+    cursor: pointer;
+    margin-left: 3px;
+  }
+
+  .i_campana{
+    font-size: 23px;
+    margin-top: 5px;
+    border-left-width: 3px solid red;
+  }
+
+  .img_perfil{
+    cursor: pointer;
+    margin-top: -4px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 2px silver;
+  }
+
+.name_user{
+  font-weight: bold;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
