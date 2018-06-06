@@ -13,10 +13,11 @@ export class PrincipalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { 
-    this.botones();
+    this.botones('carrusel', 'product_');
+   // this.botones('carrusel_2', 'produc_');
   }
 
-  botones(){
+  botones(clase:any, producto:any){
     var posicion = 0;
     var imagenes = new Array();
 
@@ -34,7 +35,7 @@ export class PrincipalComponent implements OnInit {
            }else{
                posicion = numeroImatges-3;
            }
-           $(".carrusel").animate({"left": -($('#product_'+posicion).position().left)}, 600);
+           $("."+clase).animate({"left": -($('#'+producto+posicion).position().left)}, 600);
            return false;
         });
    
@@ -56,7 +57,7 @@ export class PrincipalComponent implements OnInit {
            }else{
                posicion = 0;
            }
-           $(".carrusel").animate({"left": -($('#product_'+posicion).position().left)}, 600);
+           $("."+clase).animate({"left": -($('#'+producto+posicion).position().left)}, 600);
            return false;
         });
    

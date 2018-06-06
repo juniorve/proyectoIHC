@@ -31,21 +31,21 @@
     }
 
 
-.carrusel{
+.carrusel, .carrusel_2{
     width:4000px;
     left:0px;
     position:absolute;
     z-index:0
     }
 
-.carrusel div{
+.carrusel div, .carrusel_2 div{
     float: left;
     height: 250px;
     margin-right: 5px;
     width: 300px;
     text-align:center;
 }
-.carrusel .img_carrusel{
+.carrusel .img_carrusel, .carrusel_2 .img_carrusel{
     cursor:pointer;
     height: 248px;
     width: 300px;

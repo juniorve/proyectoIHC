@@ -1,7 +1,8 @@
  
 .imagen, .inputs{  
     height: 570px;   
-    background:#ffff;   	
+    /* background:white; */
+    background: rgb(72,209,204,0.2);   	
     padding: 0.7em;
     margin: 24px  auto; 
     box-shadow: 1px 1px 2px 2px silver; 
@@ -36,16 +37,51 @@
 
 .uno{
     height: 100px;
-    border: 0.1px solid gray;
+    border: 2px solid white;
     margin-top: 20px;
+}
+
+.uno p{
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+.redes{
+    font-size: 25px;
+    margin-right: 8px;
+    margin-top: -20px;
+}
+
+.r_facebook{
+color: rgb(70,130,180,0.9);
+}
+
+.r_facebook:hover{
+    color: #4682B4;
+}
+
+.r_twiter{ 
+color: rgb(0,191,255,0.8)
+}
+
+.r_twiter:hover{
+    color: #00BFFF; 
 }
 
 .update{
     font-weight: 500;
-    background: #11B771;
+    background: rgb(95,158,160,1);
     margin-top: 40px;
     margin-left: 43%;	
     border: none;
     border-radius: 5px; 
 }
+
+.update:hover{
+    background: #008080;
+}
  
+.fa{
+    cursor: pointer;
+}
