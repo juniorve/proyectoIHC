@@ -2,6 +2,7 @@ import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 import {Router,ActivatedRoute, Params} from '@angular/router';
+import { ArgumentType } from '@angular/compiler/src/core';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class MenuComponent implements OnInit{
   public token;
   public nameUser:String="Carlos";
     
-  constructor(private _userService: UserService){
+  constructor(private _userService: UserService, private _router:Router, private _route:ActivatedRoute){
   }  
   
   ngOnInit(){ 
@@ -38,4 +39,5 @@ export class MenuComponent implements OnInit{
     this.token=null;
     this.errorMessage=null;
   }
+ 
 }

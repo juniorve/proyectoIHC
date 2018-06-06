@@ -21,16 +21,13 @@
 }
 
 
-#carrusel{
-    float:left;
+#carrusel{ 
     width:1200px;
     overflow:hidden;
     height:251px;
-    position:relative;
-    margin-top:20px; 
-    margin-left: 3%;
-    margin-right: 3%; 
-    flex: auto;
+    position:relative; 
+    padding-left: 10em;
+    margin: 20px auto; 
     }
 
 

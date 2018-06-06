@@ -1,0 +1,51 @@
+ 
+.imagen, .inputs{  
+    height: 570px;   
+    background:#ffff;   	
+    padding: 0.7em;
+    margin: 24px  auto; 
+    box-shadow: 1px 1px 2px 2px silver; 
+}
+
+.imagen{  
+    text-align: center;
+    margin-right: -5px;
+}
+
+.datos{
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+    border-bottom: 2px solid black;
+}
+
+.imagen p{
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #2F4F4F; 
+}
+
+.img_perfil{
+    border-radius: 100%;
+    height: 160px;
+    width: 160px;
+    margin-top: 20px;    
+    box-shadow: 4px 4px 4px #eee;
+    
+}
+
+.uno{
+    height: 100px;
+    border: 0.1px solid gray;
+    margin-top: 20px;
+}
+
+.update{
+    font-weight: 500;
+    background: #11B771;
+    margin-top: 40px;
+    margin-left: 43%;	
+    border: none;
+    border-radius: 5px; 
+}
+ 

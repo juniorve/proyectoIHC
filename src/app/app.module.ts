@@ -6,13 +6,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { RestaurantComponent } from './components/menu/restaurant/restaurant.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     PrincipalComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
