@@ -4,7 +4,7 @@
     height: 250px;
 
 } */
-#carrusel .izquierda_flecha{
+#carrusel .izquierda_flecha, #carrusel .izquierda_flech{
     position:absolute;
     left:10px;
     z-index:1;
@@ -12,7 +12,7 @@
     margin-top:-9px; 
     }
 
-#carrusel .derecha_flecha{
+#carrusel .derecha_flecha,#carrusel .derecha_flech{
     position:absolute;
     right:10px;
     z-index:1;

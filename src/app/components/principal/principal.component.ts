@@ -13,11 +13,11 @@ export class PrincipalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { 
-    this.botones('carrusel', 'product_');
-   // this.botones('carrusel_2', 'produc_');
+    this.botones('carrusel', 'product_','izquierda_flecha','derecha_flecha');
+   this.botones('carrusel_2', 'produc_','izquierda_flech','derecha_flech');
   }
 
-  botones(clase:any, producto:any){
+  botones(clase:any, producto:any, flecha_i:any, flecha_d:any){
     var posicion = 0;
     var imagenes = new Array();
 
@@ -25,11 +25,11 @@ export class PrincipalComponent implements OnInit {
       //alert(jQuery('.texto').html());
       var numeroImatges = 6;
       if(numeroImatges<=3){
-          $('.derecha_flecha').css('display','none');
-       $('.izquierda_flecha').css('display','none');
+          $('.'+flecha_d).css('display','none');
+       $('.'+flecha_i).css('display','none');
       }
    
-        $('.izquierda_flecha').on('click',function(){
+        $('.'+flecha_i).on('click',function(){
             if(posicion>0){
                posicion = posicion-1;
            }else{
@@ -39,19 +39,19 @@ export class PrincipalComponent implements OnInit {
            return false;
         });
    
-        $('.izquierda_flecha').hover(function(){
+        $('.'+flecha_i).hover(function(){
             $(this).css('opacity','0.5');
         },function(){
             $(this).css('opacity','1');
         });
    
-        $('.derecha_flecha').hover(function(){
+        $('.'+flecha_d).hover(function(){
             $(this).css('opacity','0.5');
         },function(){
             $(this).css('opacity','1');
         });
    
-        $('.derecha_flecha').on('click',function(){
+        $('.'+flecha_d).on('click',function(){
            if(numeroImatges>posicion+3){
                posicion = posicion+1;
            }else{
