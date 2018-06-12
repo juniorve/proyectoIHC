@@ -166,21 +166,22 @@ img{
 }
 
 .fa_face:hover{
-    color:rgb(70,130,180,0.9);
+    color:rgb(70,130,180,1);
 }
 
 .fa_twiter:hover{
-    color:rgb(0,191,255,0.9);
+    color:rgb(0,191,255,1);
 }
 
 .fa_google:hover{
-    color:rgb(165,42,42,0.9);
+    color:rgb(165,42,42,1);
 }
 
 
 .cuenta{
     color: #696969;
     margin-top: 10px;
+    text-align: center;
 }
 
 .cuenta a{
@@ -192,4 +193,17 @@ img{
 
 .cuenta a:hover{
     color: rgb(0,128,128,1);
+}
+
+.card .vista{
+    text-align: center;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    color:#708090;
+    margin-top: -10px;
+}
+
+form{
+    margin-top: -20px;
 }

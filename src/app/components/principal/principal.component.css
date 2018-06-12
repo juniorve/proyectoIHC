@@ -22,12 +22,12 @@
 
 
 #carrusel{ 
-    /* width:1200px; */
+     /* width:1200px;  */
     overflow:hidden;
     height:251px;
     position:relative;  
     margin: 20px auto; 
-    width: 100%;
+     width: 95.5%; 
     }
 
 
@@ -42,7 +42,6 @@
     float: left;
     height: 250px;
     margin-right: 5px;
-    width: 300px;
     text-align:center;
 }
 .carrusel .img_carrusel, .carrusel_2 .img_carrusel{
