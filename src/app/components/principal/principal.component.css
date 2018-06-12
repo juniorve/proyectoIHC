@@ -22,12 +22,12 @@
 
 
 #carrusel{ 
-    width:1200px;
+    /* width:1200px; */
     overflow:hidden;
     height:251px;
-    position:relative; 
-    padding-left: 10em;
+    position:relative;  
     margin: 20px auto; 
+    width: 100%;
     }
 
 
