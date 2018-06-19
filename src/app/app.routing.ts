@@ -1,4 +1,3 @@
-import { PerfilUpdateComponent } from './components/perfil-update/perfil-update.component';
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
@@ -17,8 +16,7 @@ const appRoutes:Routes =[
         children:[
             {path:'principal', component:PrincipalComponent},
             {path:'restaurant',component:RestaurantComponent},
-            {path:'perfil', component: PerfilComponent},   
-            {path:'perfil-update', component: PerfilUpdateComponent},
+            {path:'perfil', component: PerfilComponent},    
             {path:'', redirectTo:'/principal', pathMatch:'full'}
         ]
     },

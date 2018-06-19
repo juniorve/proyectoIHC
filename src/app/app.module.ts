@@ -10,8 +10,7 @@ import { RestaurantComponent } from './components/menu/restaurant/restaurant.com
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { LoginComponent } from './components/login/login.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { PerfilUpdateComponent} from './components/perfil-update/perfil-update.component';
+import { FooterComponent } from './components/footer/footer.component'; 
 import {OverlayModule} from '@angular/cdk/overlay'; 
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -25,8 +24,7 @@ import { HttpModule } from '@angular/http';
     PerfilComponent,
     LoginComponent,
     ComentariosComponent,
-    FooterComponent,
-    PerfilUpdateComponent 
+    FooterComponent 
   ],
   imports: [
     MaterialModule,
