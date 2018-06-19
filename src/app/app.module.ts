@@ -1,3 +1,4 @@
+import { MaterialModule } from './shared/modules/material.module';
 import { MenuComponent } from './components/menu/menu.component';
 import { routing, appRoutingProviders } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +11,10 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { LoginComponent } from './components/login/login.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PerfilUpdateComponent} from './components/perfil-update/perfil-update.component';
+import {OverlayModule} from '@angular/cdk/overlay'; 
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -20,12 +25,17 @@ import { FooterComponent } from './components/footer/footer.component';
     PerfilComponent,
     LoginComponent,
     ComentariosComponent,
-    FooterComponent
+    FooterComponent,
+    PerfilUpdateComponent 
   ],
   imports: [
+    MaterialModule,
+    FormsModule,
+    HttpModule,
     BrowserModule,
-    routing
-  ],
+    routing,
+    OverlayModule,ReactiveFormsModule
+  ],   
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })

@@ -85,3 +85,31 @@ color: rgb(0,191,255,0.8)
 .fa{
     cursor: pointer;
 }
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: 5%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+
+  .titulo-modal{
+      background: gray;
+      color: white;
+      font-weight: bold;
+    }
+  
+    .btn-cancelar{
+        background: #2F4F4F;
+        color:white;
+        margin-left: 5px;
+    }
+
+    .botones{
+        margin-left:-50px;
+    }
