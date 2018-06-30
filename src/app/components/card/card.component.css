@@ -1,0 +1,34 @@
+.example-card {
+  height: 350px;    
+  } 
+  
+  .img_carrusel{
+    cursor:pointer;
+    height: 248px;
+  }
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  
+  .botones{
+      text-align: center;
+  }
+
+  .numeros{
+    background: #4a4a4a;
+    padding: 1px 5px;
+    color: white;
+  }
+
+  .tipo{
+      color:gray;
+      font-weight: bold;
+      margin-left: 5px;
+      font-size: 20px;
+  }
+
+  .todo{
+    display: inline-block;
+  }

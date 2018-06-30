@@ -39,34 +39,39 @@
           &times;
         </button>
         <div class="modal_title">
-          <h5 class="modal-title">MANTENIMIENTO DE PERFIL</h5>
+          <h5 class="modal-title">EDICIÓN DE DATOS PERSONALES</h5>
         </div>
       </div>
 
       <div class="modal-body">
         <form class="form" #formCategoria="ngForm">
           <div class="example-form">
-            <mat-form-field class="example-full-width">
-              <input matInput #cant_name maxlength="50" placeholder="Nombre">
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Nombre</mat-label>
+              <input matInput #cant_name maxlength="50">
               <mat-hint align="end">{{cant_name.value.length}} / 50</mat-hint>
             </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input matInput #cant_apellido maxlength="50" placeholder="Apellidos">
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Apellidos</mat-label>
+              <input matInput #cant_apellido maxlength="50">
               <mat-hint align="end">{{cant_apellido.value.length}} / 50</mat-hint>
             </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input matInput #cant_ciudad maxlength="50" placeholder="Ciudad">
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Ciudad</mat-label>
+              <input matInput #cant_ciudad maxlength="50">
               <mat-hint align="end">{{cant_ciudad.value.length}} / 50</mat-hint>
             </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input matInput #cant_dir maxlength="50" placeholder="Dirección">
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Dirección</mat-label>
+              <input matInput #cant_dir maxlength="50" >
               <mat-hint align="end">{{cant_dir.value.length}} / 50</mat-hint>
             </mat-form-field>
             
   <table class="example-full-width" cellspacing="0"><tr>
       <td>
-        <mat-form-field class="example-full-width">
-          <input #cant_email maxlength="25" matInput placeholder="Email" [formControl]="emailFormControl">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input #cant_email maxlength="25" matInput [formControl]="emailFormControl">
           <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
          dirección de correo electrónico inválida
           </mat-error>
@@ -76,15 +81,17 @@
           <mat-hint align="end">{{cant_email.value.length}} / 25</mat-hint>
         </mat-form-field>
     </td>
-      <td><mat-form-field class="example-full-width">
-        <input #cant_cel maxlength="9" matInput placeholder="Celular">
+      <td><mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Celular</mat-label>
+          <input #cant_cel maxlength="9" matInput>
         <mat-hint align="end">{{cant_cel.value.length}} / 9</mat-hint>
       </mat-form-field></td>
     </tr></table> 
 
     
-  <mat-form-field class="example-full-width">
-      <textarea #cant_des maxlength="100" matInput placeholder="Descripción"></textarea>
+  <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Descripción</mat-label>
+      <textarea #cant_des maxlength="100" matInput ></textarea>
       <mat-hint align="end">{{cant_des.value.length}} / 100</mat-hint>
     </mat-form-field>
 

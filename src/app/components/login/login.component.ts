@@ -11,7 +11,7 @@ import {Router,ActivatedRoute, Params} from '@angular/router';
 })  
 
 export class LoginComponent implements OnInit{
-  public title = 'EVOLPLUS';
+  public title = '';
   public user: User;
   public errorMessage;
 
@@ -25,11 +25,10 @@ export class LoginComponent implements OnInit{
   }  
   
   ngOnInit(){
-    //this.identity = this._userService.getIdentity();
-    //this.token = this._userService.getToken();
+    this.identity = this._userService.getIdentity();
+    this.token = this._userService.getToken();
   }
 
-  /*
   loginUser(){
    
    // conseguir los datos del usuario identificado
@@ -56,7 +55,7 @@ export class LoginComponent implements OnInit{
                                 else{
                                       // crear elemento en el localstorage para tener al token disponible
                                       localStorage.setItem('token', token);
-                                       this._router.navigate(['/vista']);
+                                       this._router.navigate(['/']);
                                         this.user = new User('','','','','',''); 
                                     }
                               },
@@ -92,5 +91,5 @@ export class LoginComponent implements OnInit{
     this.token=null;
     this.errorMessage=null;
 
-  }*/
+  }
 }

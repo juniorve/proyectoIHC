@@ -18,14 +18,14 @@ export class MenuComponent implements OnInit{
 
 	public identity;
   public token;
-  public nameUser:String="Carlos";
+  public nameUser:String;
     
   constructor(private _userService: UserService, private _router:Router, private _route:ActivatedRoute){
   }  
   
   ngOnInit(){ 
-    // this.identity = this._userService.getIdentity();
-    // this.token = this._userService.getToken();
+     this.identity = this._userService.getIdentity();
+     this.token = this._userService.getToken();
     if(this.identity){
       this.nameUser=this.identity.name;
     }

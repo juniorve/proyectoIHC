@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {OverlayModule} from '@angular/cdk/overlay'; 
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpModule } from '@angular/http';
     PerfilComponent,
     LoginComponent,
     ComentariosComponent,
-    FooterComponent 
+    FooterComponent,
+    CardComponent 
   ],
   imports: [
     MaterialModule,
