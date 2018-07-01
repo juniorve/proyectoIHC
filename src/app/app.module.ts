@@ -10,11 +10,13 @@ import { RestaurantComponent } from './components/menu/restaurant/restaurant.com
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { LoginComponent } from './components/login/login.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
-import { FooterComponent } from './components/footer/footer.component'; 
-import {OverlayModule} from '@angular/cdk/overlay'; 
-import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CardComponent } from './components/card/card.component';
+import { MrestaurantComponent } from './components/mrestaurant/mrestaurant.component';
+import { ListrestaurantComponent } from './components/listrestaurant/listrestaurant.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CardComponent } from './components/card/card.component';
     LoginComponent,
     ComentariosComponent,
     FooterComponent,
-    CardComponent 
+    CardComponent,
+    MrestaurantComponent,
+    ListrestaurantComponent
   ],
   imports: [
     MaterialModule,
@@ -34,8 +38,8 @@ import { CardComponent } from './components/card/card.component';
     HttpModule,
     BrowserModule,
     routing,
-    OverlayModule,ReactiveFormsModule
-  ],   
+    OverlayModule, ReactiveFormsModule
+  ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,6 @@
-
+.imagen{
+  height: 100%;
+}
 
 #profile-img{
     position: relative;
@@ -134,9 +136,9 @@ img{
 .demas{
     width: 100%;
     height: 100%;
-    position: absolute;	
+    position: absolute;
 	background:rgba(40,57,101,.6);
-    
+
 }
 
 .redes{

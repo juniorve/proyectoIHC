@@ -2,24 +2,25 @@
   <div class="row">
     <div class="col-md-4 imagen">
       <img src="assets/img/perfil.jpg" class="img_perfil">
-      <p>JUAN MANUEL</p>
+      <p>{{identity.name}} {{identity.surname}}</p>
       <i class="fa redes r_twiter fa-twitter" aria-hidden="true"></i>
       <i class="fa redes r_facebook fa-facebook-official" aria-hidden="true"></i>
       <hr>
+      {{identity.descripcion}}
     </div>
     <div class="col-md-7 inputs">
       <p class="datos">DATOS PERSONALES</p>
       <div class="col-xl-12 uno">
-        <p>Nombre: Juan Manuel</p>
-        <p>Apellidos: Chavez Herrera</p>
+        <p>Nombre: {{identity.name}}</p>
+        <p>Apellidos: {{identity.surname}}</p>
       </div>
       <div class="col-xl-12 uno">
-        <p>Ciudad: Lima</p>
-        <p>Dirección: Norberto Haro 2671</p>
+        <p>Ciudad: {{identity.ciudad}}</p>
+        <p>Dirección: {{identity.direccion}}</p>
       </div>
       <div class="col-xl-12 uno">
-        <p>Email: juan.manuel@gmail.com</p>
-        <p>Celular: 956793650</p>
+        <p>Email: {{identity.email}}</p>
+        <span>Celular: {{identity.celular}}</span>
       </div>
       <button class="update btn btn-info" data-toggle="modal" data-target="#modalPerfil">
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -29,6 +30,8 @@
 
   </div>
 </div>
+
+
 
 <div class="modal fade" id="modalPerfil">
   <div class="modal-dialog">
@@ -42,72 +45,71 @@
           <h5 class="modal-title">EDICIÓN DE DATOS PERSONALES</h5>
         </div>
       </div>
-
       <div class="modal-body">
         <form class="form" #formCategoria="ngForm">
           <div class="example-form">
-            <mat-form-field appearance="outline" class="example-full-width">
-                <mat-label>Nombre</mat-label>
-              <input matInput #cant_name maxlength="50">
+            <mat-form-field class="example-full-width">
+
+              <input placeholder="Nombre" #name='ngModel' name='name' [(ngModel)]="user.name" matInput #cant_name maxlength="50">
               <mat-hint align="end">{{cant_name.value.length}} / 50</mat-hint>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="example-full-width">
-                <mat-label>Apellidos</mat-label>
-              <input matInput #cant_apellido maxlength="50">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Apellidos" #surname='ngModel' name='surname' [(ngModel)]="user.surname" #cant_apellido maxlength="50">
               <mat-hint align="end">{{cant_apellido.value.length}} / 50</mat-hint>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="example-full-width">
-                <mat-label>Ciudad</mat-label>
-              <input matInput #cant_ciudad maxlength="50">
+            <mat-form-field class="example-full-width">
+              <input placeholder="Ciudad" matInput #ciudad='ngModel' name='ciudad' [(ngModel)]="user.ciudad" #cant_ciudad maxlength="50">
               <mat-hint align="end">{{cant_ciudad.value.length}} / 50</mat-hint>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="example-full-width">
-                <mat-label>Dirección</mat-label>
-              <input matInput #cant_dir maxlength="50" >
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Dirección" #direccion='ngModel' name='direccion' [(ngModel)]="user.direccion" #cant_dir maxlength="50">
               <mat-hint align="end">{{cant_dir.value.length}} / 50</mat-hint>
             </mat-form-field>
-            
-  <table class="example-full-width" cellspacing="0"><tr>
-      <td>
-        <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input #cant_email maxlength="25" matInput [formControl]="emailFormControl">
-          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-         dirección de correo electrónico inválida
-          </mat-error>
-          <mat-error *ngIf="emailFormControl.hasError('required')">
-            correo es <strong>requerido</strong>
-          </mat-error>
-          <mat-hint align="end">{{cant_email.value.length}} / 25</mat-hint>
-        </mat-form-field>
-    </td>
-      <td><mat-form-field appearance="outline" class="example-full-width">
-          <mat-label>Celular</mat-label>
-          <input #cant_cel maxlength="9" matInput>
-        <mat-hint align="end">{{cant_cel.value.length}} / 9</mat-hint>
-      </mat-form-field></td>
-    </tr></table> 
 
-    
-  <mat-form-field appearance="outline" class="example-full-width">
-      <mat-label>Descripción</mat-label>
-      <textarea #cant_des maxlength="100" matInput ></textarea>
-      <mat-hint align="end">{{cant_des.value.length}} / 100</mat-hint>
-    </mat-form-field>
+            <table class="example-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input placeholder="Email" name='email' [(ngModel)]="user.email" #cant_email maxlength="25" matInput [formControl]="emailFormControl">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                      dirección de correo electrónico inválida
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                      correo es
+                      <strong>requerido</strong>
+                    </mat-error>
+                    <mat-hint align="end">{{cant_email.value.length}} / 25</mat-hint>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input placeholder="Celular" #celular='ngModel' name='celular' [(ngModel)]="user.celular" #cant_cel maxlength="9" matInput>
+                    <mat-hint align="end">{{cant_cel.value.length}} / 9</mat-hint>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+
+
+            <mat-form-field class="example-full-width">
+              <textarea placeholder="Descripción" #descripcion='ngModel' name='descripcion' [(ngModel)]="user.descripcion" #cant_des maxlength="100"
+                matInput></textarea>
+              <mat-hint align="end">{{cant_des.value.length}} / 100</mat-hint>
+            </mat-form-field>
 
           </div>
-
-        <div class="botones"> 
-          <button type="submit" id="btnACategoria" class="btn btn-primary btn-aceptar form-text offset-xs-7" data-dismiss="modal"
-            [disabled]="!formCategoria.form.valid">
-            <i class="fa fa-check" aria-hidden="true"></i>
-            <span>Aceptar</span>
-          </button>
-          <button id="btnNoRegistrar" type="button" class="btn btn-cancelar form-text" data-dismiss="modal">
-            <i class="fa fa-ban" aria-hidden="true"></i>
-            <span>Cancelar</span>
-          </button>
-        </div>
+          <br>
+          <div class="botones">
+            <button (click)="updateUser()" type="button" id="btnACategoria" class="btn btn-primary btn-aceptar form-text offset-xs-7"
+              data-dismiss="modal" [disabled]="!formCategoria.form.valid">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <span>Aceptar</span>
+            </button>
+            <button id="btnNoRegistrar" type="button" class="btn btn-cancelar form-text" data-dismiss="modal">
+              <i class="fa fa-ban" aria-hidden="true"></i>
+              <span>Cancelar</span>
+            </button>
+          </div>
         </form>
       </div>
     </div>
