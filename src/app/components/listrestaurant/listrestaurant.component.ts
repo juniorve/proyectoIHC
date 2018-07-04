@@ -33,12 +33,15 @@ export class ListrestaurantComponent implements OnInit {
   ngOnInit() {
     this.getRestaurants();
   }
-  /*
-    upEtapa(idEvento: String) {
-      let id = idEvento;
-      console.log(id);
-      this._router.navigate(['/etapa/' + id, 1]);
-    } */
+
+  upRestaurant(idRestaurant: String) {
+    this._router.navigate(['/restaurant/' + idRestaurant]);
+  }
+
+
+  editRestaurant(idRestaurant: String) {
+    this._router.navigate(['/editrestaurant/' + idRestaurant]);
+  }
 
   getRestaurants() {
     //   this._eventoService.getEventos(this.token, this.identity._id).subscribe(

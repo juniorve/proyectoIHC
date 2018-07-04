@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './components/principal/principal.component';
-import { RestaurantComponent } from './components/menu/restaurant/restaurant.component';
+import { RestaurantComponent } from './components/restaurant/restaurant.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { LoginComponent } from './components/login/login.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
@@ -17,6 +17,8 @@ import { HttpModule } from '@angular/http';
 import { CardComponent } from './components/card/card.component';
 import { MrestaurantComponent } from './components/mrestaurant/mrestaurant.component';
 import { ListrestaurantComponent } from './components/listrestaurant/listrestaurant.component';
+import { EditrestaurantComponent } from './components/editrestaurant/editrestaurant.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ListrestaurantComponent } from './components/listrestaurant/listrestaur
     FooterComponent,
     CardComponent,
     MrestaurantComponent,
-    ListrestaurantComponent
+    ListrestaurantComponent,
+    EditrestaurantComponent,
+    SidebarComponent
   ],
   imports: [
     MaterialModule,

@@ -1,0 +1,59 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-1 logo">
+        <img src="assets/img/norkys.png">
+    </div>
+    <div class="col-md-8 texto">
+
+      <p>{{restaurant.nombre}}</p>
+      <p class="descripcion">
+        {{restaurant.descripcion}} </p>
+    </div>
+    <div class="col-md-3 imagen img-fluid">
+        <i class="fa fa-trophy" aria-hidden="true"></i>
+      <p> <strong> Plato del mes: </strong>Anticuchos</p>
+      <img src="assets/img/anticuchos.jpg" alt="">
+    </div>
+
+      <div class="col-md-12"> <p class="detalle"> DETALLES DEL RESTAURANTE</p>
+        <div class="detalle_des">
+        <span class="primero">Horario de atención </span><span class="det">
+          {{restaurant.horario}}
+        </span>
+        <hr>
+        <span class="primero">Direccion </span><span class="det">
+          {{restaurant.direccion}}
+        </span>
+        <hr>
+        <span class="primero">Tipo de cocina </span><span class="det">
+          {{restaurant.tipo_cocina}}
+        </span>
+        <hr>
+        <span class="primero">Capacidad </span><span class="det">{{restaurant.capacidad}}</span>
+        <hr>
+      </div>
+      </div>
+      <div class="col-md-12">
+          <p class="platos">ESPECIALIDADES</p>
+      </div>
+      <div class="col-md-4 img_platos">
+        <img src="assets/img/n2.jpg" alt="">
+      </div>
+       <div class="col-md-4 img_platos">
+        <img src="assets/img/n5.jpg" alt="">
+      </div>
+      <div class="col-md-4 img_platos">
+        <img src="assets/img/n3.jpg" alt="">
+      </div>
+
+      <div class="col-md-12">
+          <p class="comentarios">COMENTARIOS</p>
+          <app-comentarios></app-comentarios>
+      </div>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+<br> <br>

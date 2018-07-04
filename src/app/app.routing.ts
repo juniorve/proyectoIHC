@@ -5,21 +5,25 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-import { RestaurantComponent } from './components/menu/restaurant/restaurant.component';
+import { RestaurantComponent } from './components/restaurant/restaurant.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { MrestaurantComponent } from './components/mrestaurant/mrestaurant.component';
 import { ListrestaurantComponent } from './components/listrestaurant/listrestaurant.component';
+import { EditrestaurantComponent } from './components/editrestaurant/editrestaurant.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: MenuComponent,
+    component: SidebarComponent,
     children: [
       { path: 'principal', component: PrincipalComponent },
-      { path: 'restaurant', component: RestaurantComponent },
+      { path: 'restaurant/:id', component: RestaurantComponent },
       { path: 'perfil', component: PerfilComponent },
       { path: 'mrestaurant', component: MrestaurantComponent },
       { path: 'listrestaurant', component: ListrestaurantComponent },
+      // { path: 'sidebar', component: SidebarComponent },
+      { path: 'editrestaurant/:id', component: EditrestaurantComponent },
       { path: '', redirectTo: '/principal', pathMatch: 'full' }
     ]
   },

@@ -1,43 +1,52 @@
 
 
+
+.menu-fixed{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+}
+.menu{
+  width: 100%;
+}
+
 .usuario{
     color:#AEB6BF;
   }
-  
+
   nav{
-      /* box-shadow: 2px 2px 2px 2px #AEB6BF; */
-   /*    box-shadow: 0 6px 10px rgba(93, 70, 232, 0.15); */
    box-shadow: 0 3px 5px gray;
-      height: 65px; 
+      height: 71px;
   }
-  
+
   #header-container,#info-container {
     background-color: #A4A4A4;
     color: white;
   }
-  
+
   #info-container h4 {
     text-align: center;
   }
-  
+
   #productsCarousel img {
     margin: 0 auto;
   }
-  
+
   a{
     color: #AEB6BF;
   }
-  
+
   a:hover{
     color: black;
   }
-  
+
   .actived{
       /* border-bottom: 4px solid #AEB6BF; */
       border-bottom: 4px solid #2F4F4F;
       padding-bottom: 3px;
+
   }
-  
+
   .menu{
     background-color: white;
   }
@@ -48,13 +57,13 @@
     font-weight: 500;
   }
   /* -------------- */
-  
+
   h1,h2,h3,h4,h5,h6{
       font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
       font-weight: 800;
   }
-  
-/* 
+
+/*
   NUEVOS ESTILOS */
   .name{
     font-weight: bold;
@@ -64,7 +73,7 @@
 
   .vista{
     color:#B22222;
-    cursor: pointer; 
+    cursor: pointer;
   }
 
   .icono{
@@ -103,4 +112,198 @@
   font-weight: bold;
   margin-left: 5px;
   cursor: pointer;
+}
+
+
+
+/*dropdown*/
+
+/* Page */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #3498db;
+}
+
+.nav {
+  width: 550px;
+   /* margin: 100px auto 0 auto; */
+  text-align: center;
+}
+
+/* Navigation */
+
+.nav {
+  font-family: Georgia, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.nav-items {
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.nav-item:last-child {
+  margin-right: 0;
+}
+
+.nav-link,
+.nav-link:link,
+.nav-link:visited,
+.nav-link:active,
+.submenu-link,
+.submenu-link:link,
+.submenu-link:visited,
+.submenu-link:active {
+  display: block;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+}
+
+.nav-link,
+.nav-link:link,
+.nav-link:visited,
+.nav-link:active {
+  color: #fff;
+  font-weight: bold;
+}
+
+#menu-container{
+  opacity: 1;
+}
+/*
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  -webkit-transform: translate(0, 10px);
+  transform: translate(0, 10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+} */
+
+.nav-link:hover::before,
+.nav-link:hover::before {
+  opacity: 1;
+  -webkit-transform: translate(0, 5px);
+  transform: translate(0, 5px);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .nav-link {
+  padding-right: 15px;
+  height: 17px;
+  line-height: 17px;
+}
+
+.dropdown .nav-link::after {
+  content: "";
+  position:absolute;
+  top: 21px;
+  right: 0;
+  border: 5px solid transparent;
+  border-top-color: black;
+}
+
+.submenu {
+  position: absolute;
+  top: 37px;
+  left: 50%;
+  height: 250px;
+  z-index: 100;
+  width: 200px;
+  margin-left: -100px;
+  background: #fff;
+  border-radius: 3px;
+  line-height: 1.46667;
+  margin-top: -5px;
+  box-shadow: 0 0 8px rgba(0,0,0,.3);
+  opacity:0;
+  -webkit-transform: translate(0, 0) scale(.85);
+  transform: translate(0, 0)scale(.85);
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+  pointer-events: none;
+}
+
+.submenu::after,
+.submenu::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  height: 0;
+}
+
+.submenu::after {
+  border-bottom-color: #fff;
+}
+
+.submenu::before {
+  margin-left: -13px;
+  border: 13px solid transparent;
+  border-bottom-color: rgba(0,0,0,.1);
+  -webkit-filter:blur(1px);
+  filter:blur(1px);
+}
+
+.submenu-items {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.submenu-item {
+  display: block;
+  text-align: left;
+}
+
+.submenu-link,
+.submenu-link:link,
+.submenu-link:visited,
+.submenu-link:active {
+  color: #3498db;
+  padding: 10px 20px;
+}
+
+.submenu-link:hover {
+  text-decoration: underline;
+}
+
+.submenu-seperator {
+  height: 0;
+  margin: 12px 10px;
+  border-top: 1px solid #eee;
+}
+
+.show-submenu .submenu {
+  opacity: 1;
+  -webkit-transform: translate(0, 25px) scale(1);
+  transform: translate(0, 25px) scale(1);
+  pointer-events: auto;
 }
