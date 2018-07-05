@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -22,6 +22,7 @@ export class PerfilComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
+
 
   public identity;
   public token;

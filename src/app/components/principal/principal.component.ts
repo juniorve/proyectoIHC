@@ -12,9 +12,11 @@ export class PrincipalComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.botones('carrusel', 'product_','izquierda_flecha','derecha_flecha');
    this.botones('carrusel_2', 'produc_','izquierda_flech','derecha_flech');
+
+
   }
 
   botones(clase:any, producto:any, flecha_i:any, flecha_d:any){
@@ -28,7 +30,7 @@ export class PrincipalComponent implements OnInit {
           $('.'+flecha_d).css('display','none');
        $('.'+flecha_i).css('display','none');
       }
-   
+
         $('.'+flecha_i).on('click',function(){
             if(posicion>0){
                posicion = posicion-1;
@@ -38,19 +40,19 @@ export class PrincipalComponent implements OnInit {
            $("."+clase).animate({"left": -($('#'+producto+posicion).position().left)}, 600);
            return false;
         });
-   
+
         $('.'+flecha_i).hover(function(){
             $(this).css('opacity','0.5');
         },function(){
             $(this).css('opacity','1');
         });
-   
+
         $('.'+flecha_d).hover(function(){
             $(this).css('opacity','0.5');
         },function(){
             $(this).css('opacity','1');
         });
-   
+
         $('.'+flecha_d).on('click',function(){
            if(numeroImatges>posicion+3){
                posicion = posicion+1;
@@ -60,7 +62,7 @@ export class PrincipalComponent implements OnInit {
            $("."+clase).animate({"left": -($('#'+producto+posicion).position().left)}, 600);
            return false;
         });
-   
+
     });
   }
 

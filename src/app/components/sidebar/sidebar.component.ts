@@ -1,8 +1,9 @@
 import { UserService } from './../../services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ArgumentType } from '@angular/compiler/src/core';
+import { EventEmitter } from 'protractor';
 
 declare var $:any;
 
@@ -33,12 +34,41 @@ export class SidebarComponent implements OnInit {
     }
 
 
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-  });
 
-    //this.sidebar();
+
+    this.sidebar();
+    this.dropdown();
+
+  }
+
+  dropdown() {
+
+    [].slice.call(document.querySelectorAll('.dropdown .nav-link')).forEach(function (el) {
+      el.addEventListener('click', onClick, false);
+    });
+
+    function onClick(e) {
+      e.preventDefault();
+      var el = this.parentNode;
+      el.classList.contains('show-submenu') ? hideSubMenu(el) : showSubMenu(el);
+    }
+
+    function showSubMenu(el) {
+      el.classList.add('show-submenu');
+      document.addEventListener('click', function onDocClick(e) {
+        e.preventDefault();
+        if (el.contains(e.target)) {
+          return;
+        }
+        document.removeEventListener('click', onDocClick);
+        hideSubMenu(el);
+      });
+    }
+
+    function hideSubMenu(el) {
+      el.classList.remove('show-submenu');
+    }
+
   }
 
   sidebar() {

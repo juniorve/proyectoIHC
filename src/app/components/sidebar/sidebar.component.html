@@ -13,12 +13,12 @@
             </div>
             <div class="sidebar-header">
                 <div class="user-pic">
-                    <!-- <img class="img-responsive img-rounded" src="./assets/css/img/user.jpg" alt="User picture"> -->
+                    <img class="img-fluid img-rounded" src="./assets/css/img/user.jpg" alt="">
                 </div>
                 <div class="user-info">
-                    <span class="user-name">Jhon
-                        <strong>Smith</strong>
-                    </span>
+                    <span *ngIf="this._userService.usuario.name" class="name_user"  >{{this._userService.usuario.name}}</span>
+                    <span *ngIf="!this._userService.usuario.name"
+                     class="name_user"  >{{nameUser}}</span>
                     <span class="user-role">Administrator</span>
                     <span class="user-status">
                         <i class="fa fa-circle"></i>
@@ -40,100 +40,33 @@
             <div class="sidebar-menu">
                 <ul>
                     <li class="header-menu">
-                        <span>General</span>
+                        <span>Restaurante</span>
                     </li>
-                    <li class="sidebar-dropdown">
-                        <a >
+                    <li class="">
+                        <a class="res_add" [routerLink]="['/principal']">
                             <i class="fa fa-dashboard"></i>
-                            <span>Dashboard</span>
-                            <span class="label label-danger">New</span>
+                            <span>Inicio</span>
                         </a>
-                        <div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a >Dashboard 1
-                                        <span class="label label-primary">Pro</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a >Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a >Dashboard 3</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
-                    <li class="sidebar-dropdown">
-                        <a >
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>E-commerce</span>
-                            <span class="badge">3</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a >Products
-                                        <span class="badge">2</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a >Orders</a>
-                                </li>
-                                <li>
-                                    <a >Credit cart</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a >
+                    <li class="">
+                        <a class="res_add" [routerLink]="['/listrestaurant']">
                             <i class="fa fa-diamond"></i>
-                            <span>Components</span>
+                            <span>restaurantes</span>
                         </a>
-                        <div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a >General</a>
-                                </li>
-                                <li>
-                                    <a >Panels</a>
-                                </li>
-                                <li>
-                                    <a >Tables</a>
-                                </li>
-                                <li>
-                                    <a >Icons</a>
-                                </li>
-                                <li>
-                                    <a >Forms</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
-                    <li class="sidebar-dropdown">
+                    <li class="">
+                      <a class="res_add" [routerLink]="['/mrestaurant']">
+                          <i class="fa fa-plus"></i>
+                          <span>Registar</span>
+                      </a>
+                  </li>
+                    <li class="">
                         <a >
                             <i class="fa fa-bar-chart-o"></i>
                             <span>Charts</span>
                         </a>
-                        <div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a >Pie chart</a>
-                                </li>
-                                <li>
-                                    <a >Line chart</a>
-                                </li>
-                                <li>
-                                    <a >Bar chart</a>
-                                </li>
-                                <li>
-                                    <a >Histogram</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
-                    <li class="sidebar-dropdown">
+                    <li class="">
                         <a >
                             <i class="fa fa-globe"></i>
                             <span>Maps</span>
@@ -163,18 +96,88 @@
                             <i class="fa fa-folder"></i>
                             <span>Examples</span>
                         </a>
+                    </li>    <li>
+                        <a >
+                            <i class="fa fa-folder"></i>
+                            <span>Examples</span>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
+    <header id="header-container">
+        <div class="container">
+          <div class="row flex-items-xs-middle flex-items-xs-between">
+            <div class="col-xs-3">
+              <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                &#9776;
+              </button>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <div id="menu-container menu2">
+      <nav id="navMenu"  class="navbar-toggleable-xs menu2 navbar collapse  menu">
+        <div class="container-fluid">
+         <div class="row">
+            <div class=" col-md-6 col-xl-9 col-sm-6">
+                <ul class="nav navbar-nav">
+                  <li class="nav-item text-xs-center vtext">
+                   <a  [routerLink]="['/principal']"> <img class="icono"  src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojRjEzMzNGOyIgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNBRTI4M0Y7IiBkPSJNMTc2LjIyLDQ5OS4zMDVDMjAxLjMyOSw1MDcuNTMzLDIyOC4xNDEsNTEyLDI1Niw1MTJjMTQxLjM4NSwwLDI1Ni0xMTQuNjE1LDI1Ni0yNTYgIGMwLTMxLjMwMS01LjYyNy02MS4yODQtMTUuOTA5LTg5LjAwOGwtMzIuODI1LTMyLjgyNWwtMTQuOTE0LDkzLjc0NWwtODUuNzE4LTg1LjcxOGwtMTg1LjgxLDcxLjUzNWwtODMuMTQxLTgzLjE0MWwtMC45MTEsMjAuOTM4ICBsLTIwLjkzOC0yMC45MzhsLTEuNDk3LDIxLjQzOEw0OC45LDEzMC41ODlsLTMuODQ3LDg4LjM5M0w3MSwyNDQuOTI5TDUzLjkyOCwzODIuNjY3TDE3Ni4yMiw0OTkuMzA1eiIvPgo8Y2lyY2xlIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBjeD0iMjU2LjAxIiBjeT0iMjU2IiByPSIxNTUuOTUiLz4KPGc+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTBFMEUwOyIgZD0iTTI1Ni4wMDksMTAwLjA0OWMtMC4xMTQsMC0wLjIyOCwwLjAwNC0wLjM0MiwwLjAwNHYzMTEuODkzYzAuMTE0LDAsMC4yMjgsMC4wMDQsMC4zNDIsMC4wMDQgICBjODYuMTI5LDAsMTU1Ljk1MS02OS44MjIsMTU1Ljk1MS0xNTUuOTUxUzM0Mi4xMzgsMTAwLjA0OSwyNTYuMDA5LDEwMC4wNDl6Ii8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNFMEUwRTA7IiBjeD0iMjU2LjAxIiBjeT0iMjU2IiByPSI5MC43MiIvPgo8L2c+CjxwYXRoIHN0eWxlPSJmaWxsOiNDMEMwQzA7IiBkPSJNMjU2LjAwOSwxNjUuMjg0Yy0wLjExNCwwLTAuMjI4LDAuMDA0LTAuMzQyLDAuMDA0djE4MS40MjRjMC4xMTQsMCwwLjIyOCwwLjAwNCwwLjM0MiwwLjAwNCAgYzUwLjEwMSwwLDkwLjcxNi00MC42MTUsOTAuNzE2LTkwLjcxNlMzMDYuMTEsMTY1LjI4NCwyNTYuMDA5LDE2NS4yODR6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNGRkQ4NjM7IiBkPSJNNDQ1LjM1MSwxMjYuNTAyYy0xMi4zODUsMC40NC0yMi4wMjIsMTAuOTk1LTIyLjAyMiwyMy4zODh2MjM1LjYyM2gyNy44NjdWMjc5LjI1NiAgYzkuODU0LDAsMTcuODQzLTcuOTg5LDE3Ljg0My0xNy44NDNWMTQ5LjM0MkM0NjkuMDM5LDEzNi40NDMsNDU4LjM1MywxMjYuMDQsNDQ1LjM1MSwxMjYuNTAyeiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRkZFQ0IzOyIgZD0iTTgxLjc5NSwzODIuNjY3VjIyMy42NTFjNi42NjEtMC41ODQsMTEuODg4LTYuMTY5LDExLjg4OC0xMi45ODJ2LTgwLjA4aC02Ljg2djU4LjM5NCAgYzAsMy42MTctMi45MzIsNi41NDktNi41NDksNi41NDloLTEuODkxYy0zLjYxNywwLTYuNTQ5LTIuOTMyLTYuNTQ5LTYuNTQ5di01OC4zOTRoLTcuOTQ1djU4LjM5NGMwLDMuNjE3LTIuOTMyLDYuNTQ5LTYuNTQ5LDYuNTQ5ICBoLTEuODkxYy0zLjYxNywwLTYuNTQ5LTIuOTMyLTYuNTQ5LTYuNTQ5di01OC4zOTRoLTYuODZ2ODAuMDhjMCw2LjgxMyw1LjIyNywxMi4zOTgsMTEuODg4LDEyLjk4MnYxNTkuMDE1TDgxLjc5NSwzODIuNjY3ICBMODEuNzk1LDM4Mi42Njd6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                   </a><a  [routerLink]="['/principal']" class=" vista"><span class="name"> VISTA Y PALADAR</span></a>
+                  </li>
+                </ul>
+            </div>
+            <div class=" col-md-6 col-xl-3 col-sm-6 menu_dos">
+                <ul class="nav navbar-nav">
+                  <li class="nav-item text-xs-center">
+                    <a class="nav-link" ><strong>
+                      <i class="fa i_campana fa-bell" aria-hidden="true"></i>
+                     </strong></a>
+                  </li>
+                  <li class="nav-item dropdown text-xs-center usuario">
+                    <a  class="nav-link">
+                      <img src="assets/img/perfil.jpg"  class="img_perfil">
+                      <span *ngIf="this._userService.usuario.name" class="name_user"  >{{this._userService.usuario.name}}</span>
+                      <span *ngIf="!this._userService.usuario.name"
+                       class="name_user"  >{{nameUser}}</span>
+
+                    </a>
+
+                    <nav class="submenu">
+                      <ul class="submenu-items">
+                          <li class="submenu-item"><a [routerLink]="['/perfil']" class="submenu-link">Ver Perfil</a></li>
+                          <li class="submenu-item"><a href="#" class="submenu-link">Contact</a></li>
+                          <li class="submenu-item"><hr class="submenu-seperator" /></li>
+                          <li class="submenu-item"><a href="#" class="submenu-link">Support</a></li>
+                          <li class="submenu-item"><a href="#" class="submenu-link">FAQs</a></li>
+                          <li class="submenu-item"><a [routerLink]="['/login']" (click)="logout()" class="submenu-link">Salir</a></li>
+                      </ul>
+                  </nav>
+
+                  </li>
+                  <!-- <li class="nav-item text-xs-center">
+                    <a [routerLink]="['/login']" (click)="logout()" class="nav-link btn-logout">
+                    <i class="fa fa-sign-out" aria-hidden="true" ></i><span>{{title}}</span>
+                  </a>
+                  </li>  -->
+                </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
     <main class="page-content">
-        <!-- <div class="container-fluid">
-            <div class="row"> -->
-              <app-menu></app-menu>
+        <!-- <app-menu></app-menu> -->
+
+
                <router-outlet></router-outlet>
               <app-footer></app-footer>
-                  <!-- </div>
-        </div> -->
+
     </main>
   </div>
