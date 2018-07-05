@@ -1,11 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormControl } from '@angular/forms';
 declare var $:any;
 @Component({
-  selector: 'app-comentarios',
-  templateUrl: './comentarios.component.html',
-  styleUrls: ['./comentarios.component.css']
+  selector: 'app-formcomentario',
+  templateUrl: './formcomentario.component.html',
+  styleUrls: ['./formcomentario.component.css']
 })
-export class ComentariosComponent implements OnInit {
+export class FormcomentarioComponent implements OnInit {
+  tipoControl = new FormControl([Validators.required]);
+  tipos = [
+    { name: 'Comida china' },
+    { name: 'Comida japonesa' },
+    { name: 'Pescados y mariscos' },
+    { name: 'Hornos y parrillas' },
+  ];
 
   constructor() { }
 

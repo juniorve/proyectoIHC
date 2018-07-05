@@ -1,16 +1,119 @@
-/**
- * Oscuro: #283035
- * Azul: #03658c
- * Detalle: #c7cacb
- * Fondo: #dee1e3
- ----------------------------------*/
- * {
- 	margin: 0;
- 	padding: 0;
- 	-webkit-box-sizing: border-box;
- 	-moz-box-sizing: border-box;
- 	box-sizing: border-box;
- }
+
+@import "https://pat270.github.io/lexicon/css/site/site-atlas-font-awesome.css";
+
+.widget-comments-header {
+	margin-bottom: 3rem;
+}
+
+
+
+
+.widget-comments-item {
+		margin-left: 40px;
+		margin-bottom: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.widget-comments-list  .widget-comments-item {
+			border-top: 2px solid #EEE;
+			padding-top: 1.5rem;
+      padding-left: 0;
+      margin-top: 0px;
+	}
+
+	.widget-comments-list  .widget-metadata {
+    margin-bottom: 1rem;
+  }
+  .username {
+    color: #272833;
+    font-weight: 700;
+  }
+
+textarea{
+  margin-top: -30px;
+}
+  /** PORTAL STYLES **/
+
+body {
+  padding: 2rem;
+}
+.todo{
+  background-color: white;    padding: 8px 30px;
+}
+.autofit-col{
+  cursor: pointer;
+}
+.borde{
+  /* border: 1px solid silver; */
+}
+
+.fa-edit, .fa-ban{
+  padding-right: 5px;
+}
+
+.fa-edit{
+ color: 	#FFA500;
+}
+ .fa-ban{
+  color: tomato;
+}
+.subnav{
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+}
+
+.responder{
+  margin-top: -10px;
+}
+.subnav:hover{
+  font-weight: 700;
+}
+
+.dropdown-menu{
+  border: 1px solid black;
+padding-left: 30px;
+  margin-top: -35px;
+  margin-left: -200px;
+  box-shadow: 2px 2px 2px 2px gray;
+}
+.comentarios{
+  font-weight: 700;
+}
+.usuario{
+margin-top: -30px;
+}
+
+.portlet{
+}
+.opiniones {
+  color: gray;
+  font-size: 25px;
+  margin-top: 20px;
+  width: 100%;
+  padding-bottom: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+
+.caja{
+  border: 1px solid silver;
+  height: 110px;
+}
+
+.img-comentario img{
+  height: 80px;
+  padding: 10px;
+}
+
+.name_comentario{
+  margin-left: 10px;
+}
+
+
 
  a {
  	color: #03658c;
@@ -25,13 +128,13 @@ body {
 	font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
 	background: #dee1e3;
 }
-
-/** ====================
- * Lista de Comentarios
- =======================*/
+.todo{
+  background-color: white;    padding: 8px 30px;
+}
 .comments-container {
 	margin: 60px auto 15px;
-	width: 85%;
+  width: 85%;
+
 }
 
 .comments-container h1 {
@@ -49,45 +152,6 @@ body {
 	margin-top: 30px;
 	position: relative;
 }
-
-/**
- * Lineas / Detalles
- -----------------------*/
-.comments-list:before {
-	content: '';
-	width: 2px;
-	height: 100%;
-	background: #c7cacb;
-	position: absolute;
-	left: 32px;
-	top: 0;
-}
-
-.comments-list:after {
-	content: '';
-	position: absolute;
-	background: #c7cacb;
-	bottom: 0;
-	left: 27px;
-	width: 7px;
-	height: 7px;
-	border: 3px solid #dee1e3;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-}
-
-.reply-list:before, .reply-list:after {display: none;}
-.reply-list li:before {
-	content: '';
-	width: 60px;
-	height: 2px;
-	background: #c7cacb;
-	position: absolute;
-	top: 25px;
-	left: -55px;
-}
-
 
 .comments-list li {
 	margin-bottom: 15px;
@@ -108,9 +172,6 @@ body {
 	clear: both;
 	margin-top: 15px;
 }
-/**
- * Avatar
- ---------------------------*/
 .comments-list .comment-avatar {
 	width: 65px;
 	height: 65px;
@@ -144,9 +205,6 @@ body {
 	display: block;
 	clear: both;
 }
-/**
- * Caja del Comentario
- ---------------------------*/
 .comments-list .comment-box {
 	width: 91%;
 	float: right;
@@ -176,7 +234,6 @@ body {
 }
 
 .reply-list .comment-box {
-	/* width: 610px; */
 	width: 91%;
 }
 .comment-box .comment-head {
@@ -249,9 +306,6 @@ body {
 	border-radius: 3px;
 }
 
-/** =====================
- * Responsive
- ========================*/
 @media only screen and (max-width: 766px) {
 	.comments-container {
 		width: 480px;
@@ -264,4 +318,4 @@ body {
 	.reply-list .comment-box {
 		width: 320px;
 	}
-}
+} */

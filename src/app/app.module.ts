@@ -19,10 +19,12 @@ import { MrestaurantComponent } from './components/mrestaurant/mrestaurant.compo
 import { ListrestaurantComponent } from './components/listrestaurant/listrestaurant.component';
 import { EditrestaurantComponent } from './components/editrestaurant/editrestaurant.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FormcomentarioComponent } from './components/formcomentario/formcomentario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FormcomentarioComponent,
     MenuComponent,
     PrincipalComponent,
     RestaurantComponent,

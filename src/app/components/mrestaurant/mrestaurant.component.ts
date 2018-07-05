@@ -22,8 +22,6 @@ declare var $: any;
 
 })
 export class MrestaurantComponent implements OnInit {
-  date = new FormControl(new Date());
-  serializedDate = new FormControl((new Date()).toISOString());
   tipoControl = new FormControl([Validators.required]);
   tipos = [
     { name: 'Comida china' },
@@ -31,6 +29,10 @@ export class MrestaurantComponent implements OnInit {
     { name: 'Pescados y mariscos' },
     { name: 'Hornos y parrillas' },
   ];
+
+
+  date = new FormControl(new Date());
+  serializedDate = new FormControl((new Date()).toISOString());
 
   public identity;
   public title: String = 'REGISTRO DE NUEVO RESTAURANTE';

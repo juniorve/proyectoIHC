@@ -11,6 +11,7 @@ import { MrestaurantComponent } from './components/mrestaurant/mrestaurant.compo
 import { ListrestaurantComponent } from './components/listrestaurant/listrestaurant.component';
 import { EditrestaurantComponent } from './components/editrestaurant/editrestaurant.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FormcomentarioComponent } from './components/formcomentario/formcomentario.component';
 
 const appRoutes: Routes = [
   {
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
       { path: 'perfil', component: PerfilComponent },
       { path: 'mrestaurant', component: MrestaurantComponent },
       { path: 'listrestaurant', component: ListrestaurantComponent },
-      // { path: 'menu', component: MenuComponent },
+       { path: 'formcomentario', component: FormcomentarioComponent },
       { path: 'editrestaurant/:id', component: EditrestaurantComponent },
       { path: '', redirectTo: '/principal', pathMatch: 'full' }
     ]
