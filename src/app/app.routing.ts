@@ -23,7 +23,7 @@ const appRoutes: Routes = [
       { path: 'perfil', component: PerfilComponent },
       { path: 'mrestaurant', component: MrestaurantComponent },
       { path: 'listrestaurant', component: ListrestaurantComponent },
-       { path: 'formcomentario', component: FormcomentarioComponent },
+       { path: 'formcomentario/:id', component: FormcomentarioComponent },
       { path: 'editrestaurant/:id', component: EditrestaurantComponent },
       { path: '', redirectTo: '/principal', pathMatch: 'full' }
     ]

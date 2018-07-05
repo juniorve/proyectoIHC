@@ -1,8 +1,7 @@
-
 <div class="container">
   <div class="row">
     <div class="col-md-1 logo">
-        <img src="assets/img/norkys.png">
+      <img src="assets/img/norkys.png">
     </div>
     <div class="col-md-8 texto">
 
@@ -11,41 +10,47 @@
         {{restaurant.descripcion}} </p>
     </div>
     <div class="col-md-3 imagen img-fluid">
-        <i class="fa fa-trophy" aria-hidden="true"></i>
-      <p> <strong> Plato del mes: </strong>Anticuchos</p>
+      <i class="fa fa-trophy" aria-hidden="true"></i>
+      <p>
+        <strong> Plato del mes: </strong>Anticuchos</p>
       <img src="assets/img/anticuchos.jpg" alt="">
     </div>
 
-      <div class="col-md-12"> <p class="detalle"> DETALLES DEL RESTAURANTE</p>
-        <div class="detalle_des">
-        <span class="primero">Horario de atención </span><span class="det">
+    <div class="col-md-12">
+      <p class="detalle"> DETALLES DEL RESTAURANTE</p>
+      <div class="detalle_des">
+        <span class="primero">Horario de atención </span>
+        <span class="det">
           {{restaurant.horario}}
         </span>
         <hr>
-        <span class="primero">Direccion </span><span class="det">
+        <span class="primero">Direccion </span>
+        <span class="det">
           {{restaurant.direccion}}
         </span>
         <hr>
-        <span class="primero">Tipo de cocina </span><span class="det">
+        <span class="primero">Tipo de cocina </span>
+        <span class="det">
           {{restaurant.tipo_cocina}}
         </span>
         <hr>
-        <span class="primero">Capacidad </span><span class="det">{{restaurant.capacidad}}</span>
+        <span class="primero">Capacidad </span>
+        <span class="det">{{restaurant.capacidad}}</span>
         <hr>
       </div>
-      </div>
-      <div class="col-md-12">
-          <p class="platos">ESPECIALIDADES</p>
-      </div>
-      <div class="col-md-4 img_platos">
-        <img src="assets/img/n2.jpg" alt="">
-      </div>
-       <div class="col-md-4 img_platos">
-        <img src="assets/img/n5.jpg" alt="">
-      </div>
-      <div class="col-md-4 img_platos">
-        <img src="assets/img/n3.jpg" alt="">
-      </div>
+    </div>
+    <div class="col-md-12">
+      <p class="platos">ESPECIALIDADES</p>
+    </div>
+    <div class="col-md-4 img_platos">
+      <img src="assets/img/n2.jpg" alt="">
+    </div>
+    <div class="col-md-4 img_platos">
+      <img src="assets/img/n5.jpg" alt="">
+    </div>
+    <div class="col-md-4 img_platos">
+      <img src="assets/img/n3.jpg" alt="">
+    </div>
 
 
   </div>
@@ -54,5 +59,169 @@
 <!-- <div class="col-md-12">
     <p class="comentarios">COMENTARIOS</p>
 </div> -->
-    <app-comentarios></app-comentarios>
+<!-- <app-comentarios></app-comentarios> -->
 
+<br>
+<div class="todo">
+  <div class=" container">
+    <div class="row borde">
+
+
+      <div class="col-md-10 offset-md-1 ">
+        <div class="portlet">
+          <div class="  widget-comments">
+            <div class="autofit-row autofit-float widget-comments-header">
+
+              <div class="col-md-12">
+                <p class="opiniones">Opiniones de nuestros usuarios:</p>
+              </div>
+              <div class="autofit-col autofit-col-end">
+                <a class="btn btn-secondary btn-sm" (click)="upComentario()">
+                  <i class="fa fa-star "></i>
+
+                  Dejar valoración</a>
+              </div>
+            </div>
+
+            <div class="autofit-row widget-comments-body">
+              <div class="autofit-col inline-item-before">
+                <span class="sticker sticker-lg sticker-success user-icon usuario">LC</span>
+              </div>
+              <div class="autofit-col autofit-col-expand">
+                <div class="form-group">
+                  <textarea class="form-control area"></textarea>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary btn-sm" type="button">Publicar comentario</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="autofit-row autofit-float widget-comments-toolbar">
+              <div class="col-md-12">
+                <p class="comentario">Comentarios: {{cantidad}}</p>
+              </div>
+
+            </div>
+
+            <div class="widget-comments-list" *ngFor='let _comentario of comentarios'>
+              <!-- Item coment 01 -->
+              <div class="widget-comments-item">
+                <div class="autofit-row">
+                  <div class="autofit-col inline-item-before">
+                    <span class="sticker sticker-lg sticker-warning user-icon">DA</span>
+                  </div>
+
+                  <div class="autofit-col autofit-col-expand" >
+                    <div class="autofit-row">
+                      <div class="autofit-col autofit-col-expand widget-metadata">
+                        <a href="#" class="username">{{_comentario.usuario.name}}</a>
+                        <div>3 Hours Ago</div>
+                      </div>
+                      <div class="autofit-col">
+                        <div class="dropdown dropdown-action" class="btn btn-default btn-sm " data-toggle="dropdown">
+                          <svg aria-hidden="true" class="lexicon-icon lexicon-icon-ellipsis-v" viewBox="0 0 512 512">
+                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                          </svg>
+                        </div>
+                        <ul class="dropdown-menu">
+                          <li class="subnav">
+                            <i class="fa fa-edit "></i>
+                            <span>Editar comentario</span>
+                          </li>
+                          <li class="subnav" (click)="deleteComentario(_comentario._id)">
+                            <i class="fa fa-ban "></i>
+                            <span>eliminar comentario</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <p>{{_comentario.descripcion}}</p>
+                    <div class="autofit-row autofit-row-center autofit-float">
+                      <div class="autofit-col">
+                        <button class="btn responder btn-outline-secondary btn-outline-borderless btn-sm" type="button">
+                          Responder
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- este es el comentario respuesta -->
+
+                <!-- <div class="widget-comments-item">
+                  <div class="autofit-row">
+                    <div class="autofit-col inline-item-before">
+                      <span class="sticker sticker-lg sticker-warning user-icon">DA</span>
+                    </div>
+                    <div class="autofit-col autofit-col-expand">
+                      <div class="autofit-row">
+                        <div class="autofit-col autofit-col-expand widget-metadata">
+                          <a href="#" class="username">David Aragones Otero</a>
+                          <div>3 Hours Ago</div>
+                        </div>
+                        <div class="autofit-col">
+                          <div class="dropdown dropdown-action">
+                            <svg aria-hidden="true" class="lexicon-icon lexicon-icon-ellipsis-v" viewBox="0 0 512 512">
+                              <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                              <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                              <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p>Percolator beans french press extraction seasonal grinder plunger pot caramelization. Single origin,
+                        dark grinder cultivar aftertaste iced skinny cappuccino irish barista aftertaste fair trade.Sweet,
+                        carajillo decaffeinated, french press crema froth and organic a fair trade. In est cream brewed bar
+                        roast filter americano turkish.</p>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+
+              <!-- <div class="widget-comments-item">
+                <div class="autofit-row">
+                  <div class="autofit-col inline-item-before">
+                    <span class="sticker sticker-lg sticker-warning user-icon">DA</span>
+                  </div>
+                  <div class="autofit-col autofit-col-expand">
+                    <div class="autofit-row">
+                      <div class="autofit-col autofit-col-expand widget-metadata">
+                        <a href="#" class="username">David Aragones Otero</a>
+                        <div>3 Hours Ago</div>
+                      </div>
+                      <div class="autofit-col">
+                        <div class="dropdown dropdown-action">
+                          <svg aria-hidden="true" class="lexicon-icon lexicon-icon-ellipsis-v" viewBox="0 0 512 512">
+                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p>Percolator beans french press extraction seasonal grinder plunger pot caramelization. Single origin,
+                      dark grinder cultivar aftertaste iced skinny cappuccino irish barista aftertaste fair trade.Sweet,
+                      carajillo decaffeinated, french press crema froth and organic a fair trade. In est cream brewed bar
+                      roast filter americano turkish.</p>
+                    <div class="autofit-row autofit-row-center autofit-float">
+                      <div class="autofit-col">
+                        <button class="btn btn-outline-secondary btn-outline-borderless btn-sm" type="button">
+                          Responder
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

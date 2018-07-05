@@ -1,18 +1,126 @@
+
+/* comentarios seccion */
+
+
+@import "https://pat270.github.io/lexicon/css/site/site-atlas-font-awesome.css";
+
+.widget-comments-header {
+	margin-bottom: 3rem;
+}
+
+
+
+
+.widget-comments-item {
+		margin-left: 40px;
+		margin-bottom: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.widget-comments-list  .widget-comments-item {
+			border-top: 2px solid #EEE;
+			padding-top: 1.5rem;
+      padding-left: 0;
+      margin-top: 0px;
+	}
+
+	.widget-comments-list  .widget-metadata {
+    margin-bottom: 1rem;
+  }
+  .username {
+    color: #272833;
+    font-weight: 700;
+  }
+
+textarea{
+  margin-top: -30px;
+}
+  /** PORTAL STYLES **/
+
+body {
+  padding: 2rem;
+}
+.todo{
+  background-color: white;    padding: 8px 30px;
+}
+.autofit-col{
+  cursor: pointer;
+}
+.borde{
+  /* border: 1px solid silver; */
+}
+
+.fa-edit, .fa-ban{
+  padding-right: 5px;
+}
+
+.fa-edit{
+ color: 	#FFA500;
+}
+ .fa-ban{
+  color: tomato;
+}
+.subnav{
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+}
+
+.responder{
+  margin-top: -10px;
+}
+.subnav:hover{
+  font-weight: 700;
+}
+
+.dropdown-menu{
+  border: 1px solid black;
+padding-left: 30px;
+  margin-top: -35px;
+  margin-left: -200px;
+  box-shadow: 2px 2px 2px 2px gray;
+}
+.comentarios{
+  font-weight: 700;
+}
+.usuario{
+margin-top: -30px;
+}
+
+.portlet{
+}
+.opiniones {
+  color: gray;
+  font-size: 25px;
+  margin-top: 20px;
+  width: 100%;
+  padding-bottom: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+
+
+
+
+/* seccion-header */
+
 .texto, .imagen, .logo{
     margin-top: 60px;
 }
- 
+
 .texto{
     font-size: 24px;
-    font-weight: bold;  
-      color: #666;    
+    font-weight: bold;
+      color: #666;
 }
 
 .descripcion{
     font-size: 17px;
     font-weight: 100;
     text-align: justify;
-    margin-top: -10px; 
+    margin-top: -10px;
 }
 
 .logo img{
@@ -28,19 +136,19 @@
     color: gray;
     margin-bottom: 0px;
     font-size: 15px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-.imagen i{ 
+.imagen i{
     color: #FFD700;
-    font-size: 40px; 
+    font-size: 40px;
 }
 
 .imagen img{
  height: 200px;
  width: 300px;
  margin-top: 2px;
- text-align: center;   
+ text-align: center;
   border-radius: 8px;
   box-shadow: 3px 3px 3px silver;
 }
@@ -49,35 +157,41 @@
      margin-top: 20px;
      border-bottom: 2px solid #9e9e9e;
      width: 100%;
-     padding-bottom: 5px; 
+     padding-bottom: 5px;
      font-family: Georgia, 'Times New Roman', Times, serif;
      font-weight: bold;
 }
 
 .img_platos img{
     margin-top: 20px;
-    height: 300px; 
+    height: 300px;
     width: 105%;
     padding-left: 20px;
     box-shadow: 3px 3px 3px silver;
     padding: 0;
 }
- 
-.detalle_des{ 
-    padding: 8px 30px;  
-} 
+
+.detalle_des{
+    padding: 8px 30px;
+}
 
 .primero{
-    margin-left: 20px; 
+    margin-left: 20px;
     position: absolute;
     font-weight: 600;
 }
 
 .detalle_des .det{
-    margin-left: 250px;   
+    margin-left: 250px;
 
 }
 
 .comentarios{
     margin-top: 40px;
 }
+
+.comentario{
+  margin-left: 20px;
+  font-weight: bold;
+}
+

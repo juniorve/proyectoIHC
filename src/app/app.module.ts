@@ -30,7 +30,7 @@ import { FormcomentarioComponent } from './components/formcomentario/formcomenta
     RestaurantComponent,
     PerfilComponent,
     LoginComponent,
-    ComentariosComponent,
+    // ComentariosComponent,
     FooterComponent,
     CardComponent,
     MrestaurantComponent,
