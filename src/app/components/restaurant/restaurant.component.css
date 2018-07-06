@@ -1,14 +1,76 @@
 
 /* comentarios seccion */
 
+.sticker-success {
+  background-color: #287D3D;
+  color: #FFF;
+}
 
-@import "https://pat270.github.io/lexicon/css/site/site-atlas-font-awesome.css";
+.sticker-lg {
+  font-size: 0.9375rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  width: 2.5rem;
+}
+
+.sticker-lg.sticker-outside {
+  left: -1.25rem;
+  top: -1.25rem;
+}
+
+.sticker-lg.sticker-outside.sticker-bottom-left {
+  bottom: -1.25rem;
+  top: auto;
+}
+
+.sticker-lg.sticker-outside.sticker-bottom-right {
+  bottom: -1.25rem;
+  left: auto;
+  right: -1.25rem;
+  top: auto;
+}
+
+.sticker-lg.sticker-outside.sticker-top-right {
+  left: auto;
+  right: -1.25rem;
+}
+
+
+.sticker {
+  align-items: center;
+  border-radius: 0.25rem;
+  height: 2rem;
+  line-height: 2rem;
+  width: 2rem;
+  display: inline-flex;
+  font-size: 0.625rem;
+  font-weight: 700;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.sticker-warning {
+  background-color: #B95000;
+  color: #FFF;
+}
+/* @import "https://pat270.github.io/lexicon/css/site/site-atlas-font-awesome.css"; */
 
 .widget-comments-header {
 	margin-bottom: 3rem;
 }
 
-
+.uno{
+  margin-top:-45px;
+}
+.dos{
+  margin-top:-39px;
+}
+.tres{
+  margin-top:-33px;
+}
 
 
 .widget-comments-item {
@@ -50,16 +112,6 @@ body {
   /* border: 1px solid silver; */
 }
 
-.fa-edit, .fa-ban{
-  padding-right: 5px;
-}
-
-.fa-edit{
- color: 	#FFA500;
-}
- .fa-ban{
-  color: tomato;
-}
 .subnav{
   font-size: 16px;
   color: black;
@@ -75,10 +127,15 @@ body {
 
 .dropdown-menu{
   border: 1px solid black;
-padding-left: 30px;
-  margin-top: -35px;
+ padding-left: 30px;
+  margin-top: -10px;
   margin-left: -200px;
   box-shadow: 2px 2px 2px 2px gray;
+  width: 220px;
+}
+
+ul{
+  list-style: none;
 }
 .comentarios{
   font-weight: 700;
@@ -162,13 +219,29 @@ margin-top: -30px;
      font-weight: bold;
 }
 
+.calificacion{
+  color: #444;
+  font-weight: 900;
+}
+
 .img_platos img{
     margin-top: 20px;
     height: 300px;
     width: 105%;
     padding-left: 20px;
-    box-shadow: 3px 3px 3px silver;
     padding: 0;
+}
+
+.imgpersona{
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+}
+
+.valor{
+  margin-left: 70px;
+  /* margin-top: -40px; */
 }
 
 .detalle_des{
@@ -194,4 +267,49 @@ margin-top: -30px;
   margin-left: 20px;
   font-weight: bold;
 }
+.titulo{
+  color:green;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: -2px;
+  margin-top: -15px;
+}
 
+ .lapiz{
+float: right;
+font-weight: 600;
+padding-left: 4px;
+font-size: 20px;
+}
+
+.tiempo
+{
+  margin-left: 20px;
+
+}
+
+.fa{
+  color: gray;
+}
+
+.fa:hover{
+  color: 	#808080;
+}
+
+.puntuacion{
+  height: 50px;
+  width: 50px;
+  background: #444;;
+}
+
+.info{
+  color: white;
+  font-weight: 800;
+  margin: 10px;
+}
+
+.img-lapiz{
+  height:30px;
+  width:30px;
+  float: right;
+}

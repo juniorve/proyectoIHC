@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/user';
+import { Comentario } from '../../models/comentario';
+import { UserService } from '../../services/user.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ComentarioService } from '../../services/comentario.service';
 // Declaramos las variables para jQuery
 declare var jQuery:any;
 declare var $:any;
@@ -6,18 +11,96 @@ declare var $:any;
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  styleUrls: ['./principal.component.css'],
+  providers: [UserService, ComentarioService]
 })
 export class PrincipalComponent implements OnInit {
+  token: string;
+  identity;
+  restaurantId: string;
+  public comentarios: any[] = [];
+  promedio: any = 0;
+  _comentarios:any[]=[];
+  public cantidad: number;
 
-  constructor() { }
+  constructor( private _userService: UserService,
+    private _route: ActivatedRoute,
+    private _comentarioService: ComentarioService,
+    private _router: Router) {
+    this.token = this._userService.getToken();
+    this.identity = this._userService.getIdentity();
+  }
+
 
   ngOnInit() {
     this.botones('carrusel', 'product_','izquierda_flecha','derecha_flecha');
    this.botones('carrusel_2', 'produc_','izquierda_flech','derecha_flech');
 
-
+this.getComentariosxUsuario();
   }
+
+
+  upRestaurant(idRestaurant: String) {
+    this._router.navigate(['/restaurant/' + idRestaurant]);
+  }
+
+
+  getComentariosxUsuario() {
+    this._comentarioService.getComentariosxUsuario(this.token, this.identity._id).subscribe(
+      response => {
+        if (!response.comentarios) {
+        } else {
+          this.comentarios = response.comentarios;
+          this.cantidad = this.comentarios.length;
+          // console.log(this.comentarios);
+           for (const comentario of this.comentarios) {
+            this.promedio = this.promedio + comentario.ambiente +
+              comentario.relacion + comentario.comida +
+              comentario.calidad;
+
+//promedio
+            /*   this._comentarioService.getComentariosxRestaurant(this.token, comentario.restaurant._id).subscribe(
+                response => {
+                  if (!response.comentarios) {
+                  } else {
+                    this._comentarios = response.comentarios;
+                    this.cantidad = this._comentarios.length;
+                    for (const coment of this._comentarios) {
+                      this.promedio = this.promedio + coment.ambiente +
+                        coment.relacion + coment.comida +
+                        coment.calidad;
+                        console.log(this.promedio / (4 * this.cantidad) );
+                    }
+                    this.promedio = this.promedio / (4 * this.cantidad);
+                    console.log(this._comentarios);
+
+                  }
+                },
+                error => {
+                  var errorMessage = <any>error;
+                  if (errorMessage != null) {
+                  }
+                }
+              ); */
+
+
+            }
+       //   this.promedio = this.promedio / (4 * this.cantidad);
+
+        //total
+
+
+        }
+      },
+      error => {
+        var errorMessage = <any>error;
+        if (errorMessage != null) {
+        }
+      }
+    );
+  }
+
+
 
   botones(clase:any, producto:any, flecha_i:any, flecha_d:any){
     var posicion = 0;

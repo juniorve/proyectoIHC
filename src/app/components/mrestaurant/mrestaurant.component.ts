@@ -72,7 +72,7 @@ export class MrestaurantComponent implements OnInit {
             this.filesToUpload).then(
               (result) => {
                 swal('Restaurante registrado', 'Datos guardados correctamente', 'success');
-                this._router.navigate(['/listrestaurant']);
+                this._router.navigate(['/restaurantedit']);
               },
               (error) => {
                 console.log(error);

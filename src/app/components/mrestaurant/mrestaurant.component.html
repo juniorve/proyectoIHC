@@ -34,8 +34,8 @@
                   </mat-select>
                   <mat-error *ngIf="tipoControl.hasError('required')">No ha seleccionado tipo de restaurant</mat-error>
                 </mat-form-field>
-
               </div>
+
               <div class="col-xs-12 col-md-6">
                 <mat-form-field class="texto" appearance="outline">
                   <mat-label>Capacidad máxima del local</mat-label>
@@ -71,9 +71,9 @@
                 <mat-form-field class="texto" appearance="outline">
                   <mat-label>Descripción del restaurant</mat-label>
                   <textarea matInput #descripcion="ngModel" name="descripcion"
-                  [(ngModel)]="restaurant.descripcion" rows="4" #cantidad maxlength="100"
+                  [(ngModel)]="restaurant.descripcion" rows="4" #cantidad maxlength="400"
                     autocomplete="off" required></textarea>
-                  <mat-hint align="end">{{cantidad.value.length}} /200</mat-hint>
+                  <mat-hint align="end">{{cantidad.value.length}} /400</mat-hint>
                 </mat-form-field>
               </div>
 
@@ -106,8 +106,14 @@
           </div>
         </div>
       </div>
-      <div class="boton">
+
+      <!-- <div class="boton">
         <button class="btn btn-info  btnsave" (click)="saveRestaurant()" type="button">GUARDAR</button>
+      </div> -->
+<div class="boton">
+      <button class="btn guardar  btnsave" (click)="saveRestaurant()" type="button">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        Guardar</button>
       </div>
     </form>
   </div>

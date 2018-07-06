@@ -29,7 +29,7 @@ export class PerfilComponent implements OnInit {
   public user: User;
 
   constructor(private _userService: UserService, private _router: Router, private _route: ActivatedRoute) {
-    this.user = new User('', '', '', '', '', '', '', '', '');
+    this.user = new User('', '', '', '', '', '', '', '', '','','');
   }
 
   ngOnInit() {

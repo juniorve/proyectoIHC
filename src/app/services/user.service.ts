@@ -18,7 +18,7 @@ export class UserService {
 
   constructor(private _http: Http) {
     this.url = GLOBAL.url;
-    this.usuario = new User('','','','','','','','','');
+    this.usuario = new User('','','','','','','','','','','');
 
   }
 
@@ -40,6 +40,18 @@ export class UserService {
     return this._http.put(this.url + 'user/' + id, params, { headers: headers })
       .map(res => res.json());
   }
+
+  saveUser(token, user: User) {
+
+    let json = JSON.stringify(user);
+    let params = json;
+
+    let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': token });
+
+    return this._http.post(this.url + 'saveUser', params, { headers: headers })
+      .map(res => res.json());
+  }
+
 
 
   loginUser(user_to_login, gethash = null) {

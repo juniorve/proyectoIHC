@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-1 logo">
+    <!-- <div class="col-md-1 logo">
       <img src="assets/img/norkys.png">
-    </div>
+    </div> -->
     <div class="col-md-8 texto">
 
       <p>{{restaurant.nombre}}</p>
@@ -73,9 +73,14 @@
             <div class="autofit-row autofit-float widget-comments-header">
 
               <div class="col-md-12">
-                <p class="opiniones">Opiniones de nuestros usuarios:</p>
+                <p class="opiniones">Opiniones de nuestros usuarios</p>
               </div>
-              <div class="autofit-col autofit-col-end">
+
+              <div class="puntuacion" *ngIf="promedio>0">
+                  <p class="info">{{promedio| number:'.0-1'}}</p>
+              </div>
+
+              <div class="autofit-col autofit-col-end valor">
                 <a class="btn btn-secondary btn-sm" (click)="upComentario()">
                   <i class="fa fa-star "></i>
 
@@ -83,7 +88,7 @@
               </div>
             </div>
 
-            <div class="autofit-row widget-comments-body">
+            <!-- <div class="autofit-row widget-comments-body">
               <div class="autofit-col inline-item-before">
                 <span class="sticker sticker-lg sticker-success user-icon usuario">LC</span>
               </div>
@@ -95,7 +100,7 @@
                   <button class="btn btn-primary btn-sm" type="button">Publicar comentario</button>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="autofit-row autofit-float widget-comments-toolbar">
               <div class="col-md-12">
@@ -108,44 +113,44 @@
               <!-- Item coment 01 -->
               <div class="widget-comments-item">
                 <div class="autofit-row">
-                  <div class="autofit-col inline-item-before">
-                    <span class="sticker sticker-lg sticker-warning user-icon">DA</span>
-                  </div>
+
 
                   <div class="autofit-col autofit-col-expand" >
                     <div class="autofit-row">
                       <div class="autofit-col autofit-col-expand widget-metadata">
-                        <a href="#" class="username">{{_comentario.usuario.name}}</a>
-                        <div>3 Hours Ago</div>
-                      </div>
-                      <div class="autofit-col">
-                        <div class="dropdown dropdown-action" class="btn btn-default btn-sm " data-toggle="dropdown">
-                          <svg aria-hidden="true" class="lexicon-icon lexicon-icon-ellipsis-v" viewBox="0 0 512 512">
-                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
-                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
-                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
-                          </svg>
-                        </div>
-                        <ul class="dropdown-menu">
-                          <li class="subnav">
-                            <i class="fa fa-edit "></i>
-                            <span>Editar comentario</span>
-                          </li>
-                          <li class="subnav" (click)="deleteComentario(_comentario._id)">
-                            <i class="fa fa-ban "></i>
-                            <span>eliminar comentario</span>
-                          </li>
-                        </ul>
+
+<img src="../../../assets/img/f1.jpg" class="imgpersona">
+
+                        <a href="#" class="username">{{_comentario.usuario.name}}
+                        </a>
+                        <!-- <i class="fa fa-trash lapiz" aria-hidden="true"
+                        (click)="deleteComentario(_comentario._id)"></i>
+                        <i class="fa lapiz fa-edit" aria-hidden="true"></i> -->
+                        <img class="img-lapiz" src="../../../assets/img/Artboard – 29.png"
+                        (click)="deleteComentario(_comentario._id)" alt="">
+                        <img class="img-lapiz"
+                        src="../../../assets/img/Artboard – 30.png" alt="">
+
+                      <span class="tiempo">hace 3 minutos</span>
+
+
+
                       </div>
                     </div>
+                    <p class="titulo">"{{_comentario.titulo}}"</p>
                     <p>{{_comentario.descripcion}}</p>
-                    <div class="autofit-row autofit-row-center autofit-float">
+
+                    <p class="calificacion">calificacion
+                        {{ (_comentario.ambiente + _comentario.relacion + _comentario.comida +
+                           _comentario.calidad)/4 | number:'.0-1' }}
+                      </p>
+                    <!-- <div class="autofit-row autofit-row-center autofit-float">
                       <div class="autofit-col">
                         <button class="btn responder btn-outline-secondary btn-outline-borderless btn-sm" type="button">
                           Responder
                         </button>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
 

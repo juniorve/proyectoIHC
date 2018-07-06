@@ -1,5 +1,25 @@
+.volver{
+  color: white;
+  background: rgb(160,82,45,0.9)
+}
+
+.volver:hover{
+  background: rgb(160,82,45,1)
+}
+
+.guardar{
+  color: white;
+  background: rgb(46,139,87,0.9)
+}
+
+.guardar:hover{
+  background: rgb(46,139,87,1)
+}
 
 
+.btnsave{
+  margin-left: 5px;
+}
 textarea{
   overflow-x:hidden;
 }

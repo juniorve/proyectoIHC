@@ -20,6 +20,8 @@ import { ListrestaurantComponent } from './components/listrestaurant/listrestaur
 import { EditrestaurantComponent } from './components/editrestaurant/editrestaurant.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FormcomentarioComponent } from './components/formcomentario/formcomentario.component';
+import { RegisterComponent } from './components/register/register.component';
+import { RestauranteditComponent } from './components/restaurantedit/restaurant_edit.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { FormcomentarioComponent } from './components/formcomentario/formcomenta
     RestaurantComponent,
     PerfilComponent,
     LoginComponent,
+    RestauranteditComponent,
     // ComentariosComponent,
     FooterComponent,
     CardComponent,
     MrestaurantComponent,
     ListrestaurantComponent,
     EditrestaurantComponent,
-    SidebarComponent
+    SidebarComponent,
+    RegisterComponent
   ],
   imports: [
     MaterialModule,

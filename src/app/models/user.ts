@@ -8,6 +8,8 @@ export class User {
         public descripcion: String,
         public email: String,
         public password: String,
+        public facebook: String,
+        public twiter: String,
         public role: String
     ) {
 

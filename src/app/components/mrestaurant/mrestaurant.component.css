@@ -1,5 +1,15 @@
 
 
+.guardar{
+  color: white;
+  background: rgb(46,139,87,0.9)
+}
+
+.guardar:hover{
+  background: rgb(46,139,87,1)
+}
+
+
 textarea{
   overflow-x:hidden;
 }

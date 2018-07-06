@@ -1,5 +1,147 @@
+<!-- <app-card></app-card> -->
 
-<app-card></app-card>
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <img mat-card-image class="img_carrusel " src="assets/img/rustica.jpg">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <mat-card-content>
+                <p>
+                  <span class="numeros"> 8.5</span>
+                  <span>
+                    <span class="tipo">Excelente</span>
+                    <p>Opiniones: 40</p>
+                  </span>
+                </p>
+
+              </mat-card-content>
+            </div>
+            <div class="col-md-4">
+              <div class="botones">
+                <mat-card-actions>
+                  <button mat-raised-button color="primary">VER</button>
+                </mat-card-actions>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <img mat-card-image class="img_carrusel " [routerLink]="['/restaurant']" src="assets/img/norkys.jpg">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <mat-card-content>
+                <p>
+                  <span class="numeros"> 8.5</span>
+                  <span>
+                    <span class="tipo">Excelente</span>
+                    <p>Opiniones: 40</p>
+                  </span>
+                </p>
+
+              </mat-card-content>
+            </div>
+            <div class="col-md-4">
+              <div class="botones">
+                <mat-card-actions>
+                  <button mat-raised-button color="primary" [routerLink]="['/restaurant']">VER</button>
+                </mat-card-actions>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-4">
+      <mat-card class="example-card">
+        <img mat-card-image class="img_carrusel " src="assets/img/bisteca.jpg">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <mat-card-content>
+                <p>
+                  <span class="numeros"> 8.5</span>
+                  <span>
+                    <span class="tipo">Excelente</span>
+                    <p>Opiniones: 40</p>
+                  </span>
+                </p>
+
+              </mat-card-content>
+            </div>
+            <div class="col-md-4">
+              <div class="botones">
+                <mat-card-actions>
+                  <button mat-raised-button color="primary">VER</button>
+                </mat-card-actions>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
+
+
+<p class="favoritos">
+  ULTIMOS VISITADOS
+</p>
+
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let _restaurante of comentarios">
+      <mat-card class="example-card">
+        <img mat-card-image class="img_carrusel " (click)="upRestaurant(restaurant._id)"
+        src="{{url+'get-img-restaurant/'+_restaurante.restaurant.imagen}}">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <mat-card-content>
+                  <span class="cali">Calificación: </span>
+                  <span class="numeros">  {{ (_restaurante.ambiente + _restaurante.relacion + _restaurante.comida +
+                      _restaurante.calidad)/4 | number:'.0-1' }}</span>
+                <p>
+                  <!-- <span class="numeros"> 8.5</span> -->
+                  <span>
+                    <!-- <span class="tipo">Excelente</span> -->
+                    <span class="tipo">
+                      {{_restaurante.restaurant.nombre}}
+                    </span>
+                    <!-- <p class="opiniones">Opiniones: 40</p> -->
+                  </span>
+                </p>
+
+              </mat-card-content>
+            </div>
+            <div class="col-md-12">
+              <div class="botones">
+                <mat-card-actions>
+                  <button mat-raised-button color="primary"
+                  (click)="upRestaurant(_restaurante.restaurant._id)">VER</button>
+                </mat-card-actions>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
 <p class="favoritos">MIS FAVORITOS</p>
 
 <div id="carrusel" class="container-fluid">
@@ -11,10 +153,11 @@
   </a>
   <div class="carrusel">
     <div class="product" id="product_0">
-      <img class="img_carrusel img-fluid"  src="assets/img/bisteca.jpg" width="195px" height="100px" />
+      <img class="img_carrusel img-fluid" src="assets/img/bisteca.jpg" width="195px" height="100px" />
     </div>
     <div class="product" id="product_1">
-      <img class="img_carrusel img-fluid" [routerLink]="['/restaurant']" src="assets/img/norkys.jpg" width="195px" height="100px" />
+      <img class="img_carrusel img-fluid" [routerLink]="['/restaurant']" src="assets/img/norkys.jpg" width="195px" height="100px"
+      />
     </div>
     <div class="product" id="product_2">
       <img class="img_carrusel img-fluid" src="assets/img/pardos.jpg" width="195px" height="100px" />
@@ -37,45 +180,45 @@
   </div>
 </div>
 
-
+<!--
 <p class="favoritos">
 
-   ULTIMOS VISITADOS</p>
-  
-  
+  ULTIMOS VISITADOS</p>
+
+
 <div id="carrusel">
-    <a href="#" class="izquierda_flech">
-      <i class="fa fa-chevron-left" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="derecha_flech">
-      <i class="fa fa-chevron-right" aria-hidden="true"></i>
-    </a>
-    <div class="carrusel_2">
-      <div class="product" id="produc_0">
-        <img class="img_carrusel img-fluid"  src="assets/img/choza.png" width="195px" height="100px" />
-      </div>
-      <div class="product" id="produc_1">
-        <img class="img_carrusel img-fluid" [routerLink]="['/restaurant']" src="assets/img/rustica.jpg" width="195px" height="100px" />
-      </div>
-      <div class="product" id="produc_2">
-        <img class="img_carrusel img-fluid" src="assets/img/panka.jpg" width="195px" height="100px" />
-      </div>
-      <div class="product" id="produc_3">
-        <img class="img_carrusel img-fluid" src="assets/img/norkys.jpg" width="195px" height="100px" />
-  
-      </div>
-      <div class="product" id="produc_0">
-        <img class="img_carrusel img-fluid" src="assets/img/pardos.jpg" width="195px" height="100px" />
-      </div>
-      <div class="product" id="produc_1">
-        <img class="img_carrusel img-fluid" src="assets/img/lucha.jpg" width="195px" height="100px" />
-      </div>
-      <div class="product" id="produc_4">
-        <img class="img_carrusel img-fluid" src="assets/img/bisteca.jpg" width="195px" height="100px" />
-      </div>
-      <div class="product" id="produc_5">
-        <img class="img_carrusel img-fluid" src="assets/img/n3.jpg" width="195px" height="100px" />
-      </div>
+  <a href="#" class="izquierda_flech">
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+  </a>
+  <a href="#" class="derecha_flech">
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </a>
+  <div class="carrusel_2">
+    <div class="product" id="produc_0">
+      <img class="img_carrusel img-fluid" src="assets/img/choza.png" width="195px" height="100px" />
+    </div>
+    <div class="product" id="produc_1">
+      <img class="img_carrusel img-fluid" [routerLink]="['/restaurant']" src="assets/img/rustica.jpg" width="195px" height="100px"
+      />
+    </div>
+    <div class="product" id="produc_2">
+      <img class="img_carrusel img-fluid" src="assets/img/panka.jpg" width="195px" height="100px" />
+    </div>
+    <div class="product" id="produc_3">
+      <img class="img_carrusel img-fluid" src="assets/img/norkys.jpg" width="195px" height="100px" />
+
+    </div>
+    <div class="product" id="produc_0">
+      <img class="img_carrusel img-fluid" src="assets/img/pardos.jpg" width="195px" height="100px" />
+    </div>
+    <div class="product" id="produc_1">
+      <img class="img_carrusel img-fluid" src="assets/img/lucha.jpg" width="195px" height="100px" />
+    </div>
+    <div class="product" id="produc_4">
+      <img class="img_carrusel img-fluid" src="assets/img/bisteca.jpg" width="195px" height="100px" />
+    </div>
+    <div class="product" id="produc_5">
+      <img class="img_carrusel img-fluid" src="assets/img/n3.jpg" width="195px" height="100px" />
     </div>
   </div>
-  
+</div> -->

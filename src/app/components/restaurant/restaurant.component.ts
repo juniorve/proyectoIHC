@@ -10,7 +10,7 @@ import { Comentario } from '../../models/comentario';
 import * as _swal from 'sweetalert';
 import { SweetAlert } from 'sweetalert/typings/core';
 const swal: SweetAlert = _swal as any;
-
+declare var $:any;
 @Component({
   selector: 'app-restaurant',
   templateUrl: './restaurant.component.html',
@@ -22,7 +22,9 @@ export class RestaurantComponent implements OnInit {
   usuario: User;
   restaurantId: string;
   restaurant: Restaurant;
+  public bandera: boolean = false;
   public comentarios: Comentario[] = [];
+  promedio: any = 0;
   public cantidad: number;
 
   constructor(private _restaurantService: RestaurantService, private _userService: UserService,
@@ -37,7 +39,35 @@ export class RestaurantComponent implements OnInit {
   ngOnInit() {
     this.getRestaurantUrl();
     this.getRestaurant();
+    this.dropdown();
   }
+
+
+  dropdown() {
+    var options = [];
+
+    $('.dropdown-menu a').on('click', function (event) {
+
+      var $target = $(event.currentTarget),
+        val = $target.attr('data-value'),
+        $inp = $target.find('input'),
+        idx;
+
+      if ((idx = options.indexOf(val)) > -1) {
+        options.splice(idx, 1);
+        setTimeout(function () { $inp.prop('checked', false) }, 0);
+      } else {
+        options.push(val);
+        setTimeout(function () { $inp.prop('checked', true) }, 0);
+      }
+
+      $(event.target).blur();
+
+      console.log(options);
+      return false;
+    });
+  }
+
   upComentario(idRestaurant: String) {
     this._router.navigate(['/formcomentario/' + this.restaurantId]);
   }
@@ -80,6 +110,14 @@ export class RestaurantComponent implements OnInit {
           this.comentarios = response.comentarios;
           this.cantidad = this.comentarios.length;
           console.log(this.comentarios);
+          for (const comentario of this.comentarios) {
+            this.promedio = this.promedio + comentario.ambiente +
+              comentario.relacion + comentario.comida +
+              comentario.calidad;
+          }
+          console.log(this.promedio);
+          this.promedio = this.promedio / (4 * this.cantidad);
+
         }
       },
       error => {
@@ -91,12 +129,13 @@ export class RestaurantComponent implements OnInit {
   }
 
   deleteComentario(idComentario: String) {
+console.log("hola mundo");
     this._comentarioService.deleteComentario(this.token, idComentario).subscribe(
       response => {
         if (!response.comentario) {
           swal('Error', 'El comentario no se elimino correctamente', 'warning');
         } else {
-          swal('Restaurante registrado', 'Datos guardados correctamente', 'success');
+          swal('Comentario eliminado', 'El comentario se elimino exitosamente', 'success');
           this.getComentariosxPropuesta();
         }
       },

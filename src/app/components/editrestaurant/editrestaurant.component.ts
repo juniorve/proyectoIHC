@@ -65,6 +65,31 @@ export class EditrestaurantComponent implements OnInit {
     });
   }
 
+  editRestaurant() {
+    this._restaurantService.updateRestaurant(this.token, this.restaurantId, this.restaurant).subscribe(
+      response => {
+        if (!response.restaurant) {
+          swal('Lo sientimos', 'Información no moficada', 'warning');
+
+        } else {
+          this.makeFileRequest(this.url + 'upload-img-restaurant/' + response.restaurant._id, [],
+            this.filesToUpload).then(
+              (result) => {
+          swal('Restaurante modificado', 'Información del restaurante modificada exitosamente', 'success');
+          this._router.navigate(['/restaurantedit']);
+              },
+              (error) => {
+                console.log(error);
+              }
+            );
+
+        }
+      },
+      error => {
+
+
+      });
+  }
 
   getRestaurant() {
     this._restaurantService.getRestaurant(this.token, this.restaurantId).subscribe(
@@ -73,7 +98,7 @@ export class EditrestaurantComponent implements OnInit {
         } else {
           this.restaurant = response.restaurant;
           console.log(this.restaurant);
-          this.imagenTemp=this.restaurant.imagen;
+          //    this.imagenTemp=this.restaurant.imagen;
         }
       },
       error => {

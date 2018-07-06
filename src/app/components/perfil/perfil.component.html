@@ -6,7 +6,16 @@
       <i class="fa redes r_twiter fa-twitter" aria-hidden="true"></i>
       <i class="fa redes r_facebook fa-facebook-official" aria-hidden="true"></i>
       <hr>
+      <p class="descripcion">
+        Descripción
+      </p>
+      <span class="desc" *ngIf="!identity.descripcion">
+          Descripción aun no registrada
+        </span>
+
+      <span *ngIf="identity.descripcion">
       {{identity.descripcion}}
+    </span>
     </div>
     <div class="col-md-7 inputs">
       <p class="datos">DATOS PERSONALES</p>
@@ -15,12 +24,24 @@
         <p>Apellidos: {{identity.surname}}</p>
       </div>
       <div class="col-xl-12 uno">
-        <p>Ciudad: {{identity.ciudad}}</p>
-        <p>Dirección: {{identity.direccion}}</p>
+          <p class="" *ngIf="!identity.ciudad">
+              Ciudad: <span class="desc"> no registrada</span>
+            </p>
+        <p *ngIf="identity.ciudad">Ciudad: {{identity.ciudad}}</p>
+
+        <p class="" *ngIf="!identity.direccion">
+            Dirección: <span class="desc"> no registrada</span>
+          </p>
+        <p  *ngIf="identity.direccion">Dirección: {{identity.direccion}}</p>
       </div>
       <div class="col-xl-12 uno">
         <p>Email: {{identity.email}}</p>
-        <span>Celular: {{identity.celular}}</span>
+
+        <p class="" *ngIf="!identity.celular">
+            Celular: <span class="desc"> no registrada</span>
+          </p>
+
+        <span *ngIf="identity.celular">Celular: {{identity.celular}}</span>
       </div>
       <button class="update btn btn-info" data-toggle="modal" data-target="#modalPerfil">
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

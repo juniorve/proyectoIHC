@@ -9,7 +9,7 @@
     left:10px;
     z-index:1;
     top:50%;
-    margin-top:-9px; 
+    margin-top:-9px;
     }
 
 #carrusel .derecha_flecha,#carrusel .derecha_flech{
@@ -21,13 +21,13 @@
 }
 
 
-#carrusel{ 
+#carrusel{
      /* width:1200px;  */
     overflow:hidden;
     height:251px;
-    position:relative;  
-    margin: 20px auto; 
-     width: 95.5%; 
+    position:relative;
+    margin: 20px auto;
+     width: 95.5%;
     }
 
 
@@ -63,18 +63,66 @@
 
 .fa{
     color: white;
-    font-size: 25px; 
+    font-size: 25px;
 }
 
 .fa:hover{
     color:#FFFFE0;
 }
- 
+
 .favoritos{
     font-weight: bold;
-    text-align: center; 
+    text-align: center;
     margin-top: 50px;
     font-size: 22px;
     margin-bottom: -12px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+
+/* --------------tarjetas */
+
+
+.example-card {
+  height: 400px;
+  }
+
+  .img_carrusel{
+    cursor:pointer;
+    height: 248px;
+  }
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .botones{
+      text-align: center;
+      margin-top: -20px;
+      margin-left: 60px;
+  }
+
+  .numeros{
+    background: #4a4a4a;
+    padding: 1px 5px;
+    color: white;
+    width: 100%;
+  }
+
+  .tipo{
+      color:gray;
+      font-weight: bold;
+      /* margin-left: 5px; */
+      font-size: 20px;
+  }
+
+  .opiniones{
+color: gray;
+  }
+.cali{
+  font-weight: bold;
+}
+  .todo{
+    display: inline-block;
+  }

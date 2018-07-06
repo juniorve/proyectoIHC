@@ -22,10 +22,10 @@ const swal: SweetAlert = _swal as any;
 export class FormcomentarioComponent implements OnInit {
   tipoControl = new FormControl([Validators.required]);
   tipos = [
-    { name: 'Mala', valor: 25 },
-    { name: 'Regular', valor: 50 },
-    { name: 'Buena', valor: 75 },
-    { name: 'Excelente', valor: 100 },
+    { name: 'Mala', valor: 2.5 },
+    { name: 'Regular', valor: 5 },
+    { name: 'Buena', valor: 7.5 },
+    { name: 'Excelente', valor: 10 },
   ];
 
   public imagenTemp: String;
