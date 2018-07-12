@@ -1,0 +1,286 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome|typicons);
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: red;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: red;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.contenedor {
+    width: 98%;
+    margin: auto;
+}
+
+h1 {
+    float: left;
+}
+
+header .contenedor {
+    display: table;
+}
+
+section {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#bienvenidos {
+    text-align: center;
+}
+
+footer .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+
+.copy {
+    font-size: 20px;
+}
+
+.sociales {
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+
+.sociales a {
+    color: #333;
+    text-decoration: none;
+}
+
+@media (min-width:768px) {
+    .sociales {
+        width: auto;
+    }
+
+    footer .contenedor {
+        justify-content: space-between;
+    }
+}
+
+
+@media (min-width:1024px) {
+    .contenedor {
+        width: 85%;
+    }
+}
+
+
+#blog h3, h4 {
+    text-align: center;
+}
+
+#blog .contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#blog article {
+    margin: 15px;
+    width: 250px;
+    padding: 0px;
+}
+.titulo{
+    color: #27AE60;
+}
+
+#blog img {
+    height: 50%;
+    width: 40%;
+    display: block;
+    margin: auto;
+}
+#banner {
+    margin-top: 50px;
+    position: relative;
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+}
+
+#banner .contenedor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #000;
+    font-size: 90px;
+}
+
+#banner h2 {
+    font-size: 28px;
+}
+
+
+
+#banner a:hover {
+    background: rgba(51,51,51,0.5);
+}
+
+@media (min-width:480px) {
+    #banner h2 {
+        font-size: 40px;
+    }
+
+    #banner a {
+        margin-top: 25px;
+    }
+}
+
+@media (min-width:768px) {
+    #banner {
+        height: 300px;
+        overflow: hidden;
+    }
+
+    #banner img {
+        height: auto;
+        margin-top: -100px;
+    }
+}
+
+@media (min-width:1024px) {
+    #banner img {
+        margin-top: -200px;
+    }
+}
+
+#info {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+#info .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-pet {
+    margin: 20px;
+}
+
+.info-pet img {
+    width: 180px;
+    height: 180px;
+    border-radius: 20%;
+    border: 5px solid #fff;
+}
+
+
+main{
+  margin-top: -50px;
+}
+header label {
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+}
+.opacidad{
+        opacity: 0.6;
+    }
+    .xd {
+        color: #000;
+    }
+    .xdd{
+        background-color:red;
+    }
+
+.contenedor .box
+{
+    position: relative;
+    top:50%;
+    left: 50%;
+    width:  70%;
+    transform: translate(-50%,-50%);
+
+}
+
+input
+{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s,
+}
+input[type="text"]
+{
+    background: #fff;
+    width: 80%;
+    height: 50px;
+    padding: 0 25px;
+    border-radius: 25px 0 0 25px;
+    border: none;
+    outline: none;
+
+}
+input[type="submit"]
+{
+    position: relative;
+    left:-5%;
+    border-radius: 0 25px 25px 0;
+    width: 15%;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+.inicia{
+background: #4682B4	;
+}
+
+
+.inicia:hover{
+  background:#191970;
+  }
+
+.registra{
+  background:rgb(0,128,128,0.9)
+}
+
+.registra:hover{
+  background:rgb(0,128,128,1)
+}
+
+
+.button {
+
+    color: #fff;
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align: center;
+    width: 200px;
+    text-decoration: none;
+    /* border-radius: 10%; */
+}

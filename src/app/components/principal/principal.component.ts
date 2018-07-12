@@ -4,6 +4,7 @@ import { Comentario } from '../../models/comentario';
 import { UserService } from '../../services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ComentarioService } from '../../services/comentario.service';
+import { GLOBAL } from '../../services/global';
 // Declaramos las variables para jQuery
 declare var jQuery:any;
 declare var $:any;
@@ -22,11 +23,14 @@ export class PrincipalComponent implements OnInit {
   promedio: any = 0;
   _comentarios:any[]=[];
   public cantidad: number;
+  url;
 
   constructor( private _userService: UserService,
     private _route: ActivatedRoute,
     private _comentarioService: ComentarioService,
     private _router: Router) {
+    this.url = GLOBAL.url;
+
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
   }

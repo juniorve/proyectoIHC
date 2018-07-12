@@ -9,37 +9,160 @@ import { Comentario } from '../../models/comentario';
 
 import * as _swal from 'sweetalert';
 import { SweetAlert } from 'sweetalert/typings/core';
+import { Imagen } from '../../models/imagen';
+import { ImagenService } from '../../services/image.service';
+import { GLOBAL } from '../../services/global';
+import { PlatilloService } from '../../services/platillo.service';
+import { Platillo } from '../../models/platillo';
 const swal: SweetAlert = _swal as any;
-declare var $:any;
+declare var $: any;
 @Component({
   selector: 'app-restaurant',
   templateUrl: './restaurant.component.html',
   styleUrls: ['./restaurant.component.css'],
-  providers: [RestaurantService, ComentarioService]
+  providers: [RestaurantService, ComentarioService, ImagenService,PlatilloService]
 })
 export class RestaurantComponent implements OnInit {
   token: string;
-  usuario: User;
+  usuario: any;
   restaurantId: string;
   restaurant: Restaurant;
   public bandera: boolean = false;
+  public imagen: Imagen;
   public comentarios: Comentario[] = [];
   promedio: any = 0;
   public cantidad: number;
+  public imagenTemp: String;
+  public url;
+  public platillos:any;
+  public imagenes: Imagen[] = [];
+  public platillo:Platillo;
 
-  constructor(private _restaurantService: RestaurantService, private _userService: UserService,
+  constructor(private _restaurantService: RestaurantService,
+    private _platilloService:PlatilloService,
+    private _userService: UserService,
+    private _imagenService: ImagenService,
     private _route: ActivatedRoute,
     private _comentarioService: ComentarioService,
     private _router: Router) {
     this.token = this._userService.getToken();
     this.usuario = this._userService.getIdentity();
     this.restaurant = new Restaurant('', '', '', '', '', '', '', '');
+    // this.platillo= new Platillo('','','');
+    this.url = GLOBAL.url;
   }
 
   ngOnInit() {
     this.getRestaurantUrl();
     this.getRestaurant();
     this.dropdown();
+    this.getPlatilloxRestaurant();
+  }
+
+
+
+  savePlatillo() {
+    console.log(this.platillo);
+    this._platilloService.savePlatillo(this.token, this.platillo).subscribe(
+      response => {
+        console.log(response);
+        if (!response.platillo) {
+          swal('Lo sentimos', 'No se pudo registrar su platillo', 'warning');
+
+        } else {
+
+          this.makeFileRequest(this.url + 'upload-img-platillo/' + response.platillo._id, [],
+            this.filesToUpload).then(
+              (result) => {
+      this.platillo = new Platillo('', this.usuario._id, this.restaurantId);
+      this.imagenTemp="";
+
+                swal('Platillo del mes registradp', 'El platillo se guardo correctamente', 'success');
+                this.getPlatilloxRestaurant();
+              },
+              (error) => {
+                console.log(error);
+              }
+            );
+
+        }
+      },
+      error => {
+        const errorMessage = <any>error;
+        if (errorMessage != null) {
+          console.log(error);
+        }
+      }
+    );
+  }
+
+
+
+  getPlatilloxRestaurant() {
+    console.log(this.restaurantId);
+    this._platilloService.getPlatilloxRestaurant(this.token, this.restaurantId).subscribe(
+      response => {
+        if (!response.platillos) {
+        } else {
+          this.platillos = response.platillos[0];
+          console.log(this.platillos);
+        }},
+        error => {
+
+        });
+  }
+
+
+
+
+  getImagenesxRestaurant() {
+    console.log(this.restaurantId);
+    this._imagenService.getImagenesxRestaurant(this.token, this.restaurantId).subscribe(
+      response => {
+        if (!response.imagenes) {
+        } else {
+          this.imagenes = response.imagenes;
+          console.log(response.imagenes);
+        }},
+        error => {
+
+        });
+  }
+
+
+  saveImagen() {
+    console.log(this.imagen);
+    this._imagenService.saveImagen(this.token, this.imagen).subscribe(
+      response => {
+        console.log(response);
+        if (!response.imagen) {
+          swal('Lo sentimos', 'No se pudo registrar su imagen', 'warning');
+
+        } else {
+
+          this.makeFileRequest(this.url + 'upload-img-imagen/' + response.imagen._id, [],
+            this.filesToUpload).then(
+              (result) => {
+      this.imagen = new Imagen('', '', '', this.usuario._id, this.restaurantId);
+      this.imagenTemp="";
+
+                swal('Imagen registrada', 'La imagen se guardo correctamente', 'success');
+                this.getImagenesxRestaurant();
+              },
+              (error) => {
+                console.log(error);
+              }
+            );
+
+        }
+      },
+      error => {
+        const errorMessage = <any>error;
+        if (errorMessage != null) {
+          console.log(error);
+        }
+      }
+    );
   }
 
 
@@ -78,6 +201,11 @@ export class RestaurantComponent implements OnInit {
       if (params['id']) {
         this.restaurantId = params['id'];
       }
+      this.imagen = new Imagen('', '', '', this.usuario._id, this.restaurantId);
+      this.platillo = new Platillo('', this.usuario._id, this.restaurantId);
+
+      this.getImagenesxRestaurant();
+
     });
   }
 
@@ -129,7 +257,7 @@ export class RestaurantComponent implements OnInit {
   }
 
   deleteComentario(idComentario: String) {
-console.log("hola mundo");
+    console.log("hola mundo");
     this._comentarioService.deleteComentario(this.token, idComentario).subscribe(
       response => {
         if (!response.comentario) {
@@ -143,8 +271,54 @@ console.log("hola mundo");
 
       }
     );
+  }
 
+
+
+
+  public filesToUpload: Array<File>;
+
+  fileChangeEvent(fileInput: any, archivo: File) {
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+
+
+    let reader = new FileReader();
+    let urlImgTemp = reader.readAsDataURL(archivo);
+    reader.onloadend = () => {
+      console.log(reader.result);
+
+      this.imagenTemp = reader.result;
+    };
 
   }
+
+
+  makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
+    var token = this.token;
+
+    return new Promise(function (resolve, reject) {
+      var formData: any = new FormData;
+      var xhr = new XMLHttpRequest();
+
+      for (var i = 0; i < files.length; i++) {
+        formData.append('imagen', files[i], files[i].name);
+      }
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            resolve(JSON.parse(xhr.response));
+          } else {
+            reject(xhr.response);
+          }
+        }
+      }
+      xhr.open('POST', url, true);
+      xhr.setRequestHeader('Authorization', token);
+      xhr.send(formData);
+    });
+
+  }
+
 
 }

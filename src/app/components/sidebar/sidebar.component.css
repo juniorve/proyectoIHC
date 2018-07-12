@@ -356,13 +356,22 @@ body {
 .dropdown {
   position: relative;
 }
-
+.verperfil{
+  cursor: pointer;
+}
+.img-rounded{
+  height: 80px;
+  width: 80px;
+  margin-left: 10px;
+}
 .dropdown .nav-link {
   padding-right: 15px;
   height: 17px;
   line-height: 17px;
 }
-
+.campanita{
+  right: -40px;
+}
 .dropdown .flecha::after {
   content: "";
   position:absolute;
@@ -453,4 +462,9 @@ a{
   -webkit-transform: translate(0, 25px) scale(1);
   transform: translate(0, 25px) scale(1);
   pointer-events: auto;
+}
+
+
+.nombreu{
+  color: white;
 }

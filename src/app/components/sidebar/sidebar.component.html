@@ -12,11 +12,11 @@
       </div>
       <div class="sidebar-header">
         <div class="user-pic">
-          <img class="img-fluid img-rounded" src="./assets/css/img/user.jpg" alt="">
+          <img class="img-fluid img-rounded" src="../../../assets/img/perfil.jpg" alt="">
         </div>
         <div class="user-info">
-          <span *ngIf="this._userService.usuario.name" class="name_user">{{this._userService.usuario.name}}</span>
-          <span *ngIf="!this._userService.usuario.name" class="name_user">{{nameUser}}</span>
+          <span *ngIf="this._userService.usuario.name" class="name_user nombreu">{{this._userService.usuario.name}}</span>
+          <span *ngIf="!this._userService.usuario.name" class="name_user nombreu">{{nameUser}}</span>
           <span *ngIf="identity.role=='ROLE_ADMIN'" class="user-role">Dueño Restaurante</span>
           <span *ngIf="identity.role=='ROLE_USER'" class="user-role">Usuario</span>
           <span class="user-status">
@@ -53,13 +53,13 @@
               <span>restaurantes</span>
             </a>
           </li>
-          <li class="">
+          <li class="" *ngIf="identity.role=='ROLE_ADMIN'">
             <a class="res_add" [routerLink]="['/mrestaurant']">
               <i class="fa fa-plus"></i>
               <span>Registar</span>
             </a>
           </li>
-          <li class="">
+          <li class="res_add" *ngIf="identity.role=='ROLE_ADMIN'">
             <a [routerLink]="['/restaurantedit']">
               <i class="fa fa-cutlery"></i>
               <span>Mantenimiento</span>
@@ -72,25 +72,26 @@
                         </a>
                     </li> -->
           <li class="header-menu">
-            <span>Extra</span>
+            <span>Cuenta</span>
           </li>
           <li>
-            <a>
+            <a class="res_add">
               <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
+              <span>Calendario</span>
             </a>
           </li>
           <li>
-            <a>
-              <i class="fa fa-folder"></i>
-              <span>Examples</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <i class="fa fa-folder"></i>
-              <span>Examples</span>
-            </a>
+              <li>
+                  <a class="res_add" [routerLink]="['/perfil']">
+                    <i class="fa fa-user"></i>
+                    <span class="verperfil" >Ver perfil</span>
+                  </a>
+                </li>
+                <li>
+              <a [routerLink]="['/inicio']" (click)="logout()" class="submenu-link">
+                <i class="fa fa-external-link-square" aria-hidden="true"></i>
+                <span>Cerrar sesión</span>
+              </a>
           </li>
         </ul>
       </div>
@@ -130,7 +131,7 @@
           </div>
           <div class=" col-md-6 col-xl-3 col-sm-6 menu_dos">
             <ul class="nav navbar-nav">
-              <li class="nav-item dropdown text-xs-center">
+              <li class="nav-item dropdown campanita text-xs-center">
                 <a class="nav-link">
                   <strong>
                     <i class="fa i_campana campana fa-bell" aria-hidden="true"></i>
@@ -142,31 +143,28 @@
                       <li class="submenu-item">
                         <a [routerLink]="['/perfil']" class="submenu-link">
                           <i class="fa fa-user" aria-hidden="true"></i>
-                          Ver Perfil</a>
+                         Notificacion 1</a>
                       </li>
+
                       <li class="submenu-item">
-                        <a href="#" class="submenu-link">
-                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                          Mis mensajes</a>
+                          <a [routerLink]="['/perfil']" class="submenu-link">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                           Notificacion 2</a>
                         </li>
-                            <li class="submenu-item">
-                              <a href="#" class="submenu-link">
-                                <i class="fa fa-key" aria-hidden="true"></i>
-                                Cambiar contraseña</a>
+
+                        <li class="submenu-item">
+                            <a [routerLink]="['/perfil']" class="submenu-link">
+                              <i class="fa fa-user" aria-hidden="true"></i>
+                             Notificacion 3</a>
+                          </li>
+
+                          <li class="submenu-item">
+                              <a [routerLink]="['/perfil']" class="submenu-link">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                               Notificacion 4</a>
                             </li>
-                      <li class="submenu-item">
-                        <hr class="submenu-seperator" />
-                      </li>
-                      <li class="submenu-item">
-                        <a href="#" class="submenu-link">
-                          <i class="fa fa-question-circle" aria-hidden="true"></i>
-                          Preguntas frecuentes</a>
-                      </li>
-                      <li class="submenu-item">
-                        <a [routerLink]="['/login']" (click)="logout()" class="submenu-link">
-                          <i class="fa fa-external-link-square" aria-hidden="true"></i>
-                          Cerrar sesión</a>
-                      </li>
+
+
                     </ul>
                   </nav>
 
@@ -205,7 +203,7 @@
                         Preguntas frecuentes</a>
                     </li>
                     <li class="submenu-item">
-                      <a [routerLink]="['/login']" (click)="logout()" class="submenu-link">
+                      <a [routerLink]="['/inicio']" (click)="logout()" class="submenu-link">
                         <i class="fa fa-external-link-square" aria-hidden="true"></i>
                         Cerrar sesión</a>
                     </li>

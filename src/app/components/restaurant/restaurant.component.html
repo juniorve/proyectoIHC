@@ -1,3 +1,159 @@
+<div class="modal fade" id="modalPerfil">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header titulo-modal">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <div class="modal_title">
+          <h5 class="modal-title">NUEVA IMAGEN DE ESPECIALIDAD</h5>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form class="form" #formCategoria="ngForm">
+
+          <br>
+          <div class="botones">
+
+            <!-- <textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="restaurant.descripcion" rows="4" class="form-control" placeholder="descripción del restaurant"></textarea> -->
+
+            <div class='row '>
+              <p class=" title">
+                Describa en algunas palabras la imagen de su establecimiento
+              </p>
+
+              <mat-form-field class="col-md-12">
+                <mat-label>Titulo</mat-label>
+                <input matInput #nombre="ngModel" name="nombre" [(ngModel)]="imagen.nombre" class="form-control" #titulo maxlength="100" autocomplete="off" >
+                <mat-hint align="end">{{titulo.value.length}} /100</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field class="col-md-12">
+                  <mat-label>Descripcion</mat-label>
+                  <input matInput class="form-control" #descripcion="ngModel" name="descripcion" [(ngModel)]="imagen.descripcion" #descripcion maxlength="100" autocomplete="off" >
+                  <mat-hint align="end">{{descripcion.value.length}} /100</mat-hint>
+                </mat-form-field>
+
+
+
+              <img *ngIf="imagenTemp" [src]="imagenTemp" class="imgTemporal col-sm-6 offset-sm-3">
+
+              <div class='group' *ngIf="imagenTemp">
+                <div id='groupcrop'>
+                  <div class='VPcrop'>
+                    <i class="fa camara fa-edit"></i>
+                    <input class='VPcropint' id='VPcropint' name='input' type='file' accept="image/x-png, image/gif, image/jpeg" (change)="fileChangeEvent($event , $event.target.files[0])"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class='group masicon col-sm-3' *ngIf="!imagenTemp">
+                <div id='groupcrop'>
+                  <div class='edit '>
+                    <i class="fa camara fa-plus"></i>
+                    <input class='VPcropint' id='VPcropint' name='input' type='file' accept="image/x-png, image/gif, image/jpeg" (change)="fileChangeEvent($event , $event.target.files[0])"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" (click)="saveImagen()"  id="btnACategoria" class="btn botonM btn-primary
+            btn-aceptar form-text offset-xs-7" data-dismiss="modal" [disabled]="!formCategoria.form.valid">
+              <i class="fa fa-check" aria-hidden="true"></i>
+              <span>Guardar</span>
+            </button>
+            <button id="btnNoRegistrar" type="button" class="btn  botonM btn-cancelar
+             form-text" data-dismiss="modal">
+              <i class="fa fa-ban" aria-hidden="true"></i>
+              <span>Cancelar</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalPerfil2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header titulo-modal">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <div class="modal_title" >
+            <h5 class="modal-title">Registro de platillo del mes</h5>
+          </div>
+        </div>
+        <div class="modal-body">
+          <form class="form" #formCategoria="ngForm">
+
+            <br>
+            <div class="botones">
+
+              <!-- <textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="restaurant.descripcion" rows="4" class="form-control" placeholder="descripción del restaurant"></textarea> -->
+
+              <div class='row '>
+                  <p class=" title">
+                      Debe ingresar el platillo que mas lo distinga
+                    </p>
+
+
+                <mat-form-field class="col-md-12">
+                  <mat-label>Nombre del platillo</mat-label>
+                  <input matInput #nombre="ngModel" name="nombre" [(ngModel)]="platillo.nombre" class="form-control" #titulo maxlength="100" autocomplete="off" >
+                  <mat-hint align="end">{{titulo.value.length}} /100</mat-hint>
+                </mat-form-field>
+
+
+
+                <img *ngIf="imagenTemp" [src]="imagenTemp" class="imgTemporal col-sm-6 offset-sm-3">
+
+                <div class='group' *ngIf="imagenTemp">
+                  <div id='groupcrop'>
+                    <div class='VPcrop'>
+                      <i class="fa camara fa-edit"></i>
+                      <input class='VPcropint' id='VPcropint' name='input' type='file' accept="image/x-png, image/gif, image/jpeg" (change)="fileChangeEvent($event , $event.target.files[0])"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class='group masicon col-sm-3' *ngIf="!imagenTemp">
+                  <div id='groupcrop'>
+                    <div class='edit '>
+                      <i class="fa camara fa-plus"></i>
+                      <input class='VPcropint' id='VPcropint' name='input' type='file' accept="image/x-png, image/gif, image/jpeg" (change)="fileChangeEvent($event , $event.target.files[0])"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" (click)="savePlatillo()"
+              id="btnACategoria" class="btn botonM btn-primary
+              btn-aceptar form-text offset-xs-7" data-dismiss="modal" [disabled]="!formCategoria.form.valid">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <span>Guardar</span>
+              </button>
+              <button id="btnNoRegistrar" type="button" class="btn  botonM btn-cancelar
+               form-text" data-dismiss="modal">
+                <i class="fa fa-ban" aria-hidden="true"></i>
+                <span>Cancelar</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <div class="container">
   <div class="row">
     <!-- <div class="col-md-1 logo">
@@ -10,10 +166,15 @@
         {{restaurant.descripcion}} </p>
     </div>
     <div class="col-md-3 imagen img-fluid">
-      <i class="fa fa-trophy" aria-hidden="true"></i>
-      <p>
-        <strong> Plato del mes: </strong>Anticuchos</p>
-      <img src="assets/img/anticuchos.jpg" alt="">
+      <i class="fa fa-trophy" *ngIf="platillos" aria-hidden="true"></i>
+      <p *ngIf="platillos">
+        <strong> Plato del mes: </strong> {{platillos.nombre}}</p>
+<div *ngIf="usuario.role=='ROLE_ADMIN'">        <button  class="btn btnplatillo" *ngIf="!platillos" data-toggle="modal" data-target="#modalPerfil2">
+          registrar platillo
+        </button>
+      </div>
+
+      <img src="{{url+'get-img-platillo/'+platillos.imagen}}" *ngIf="platillos" alt="">
     </div>
 
     <div class="col-md-12">
@@ -42,18 +203,18 @@
     <div class="col-md-12">
       <p class="platos">ESPECIALIDADES</p>
     </div>
-    <div class="col-md-4 img_platos">
-      <img src="assets/img/n2.jpg" alt="">
-    </div>
-    <div class="col-md-4 img_platos">
-      <img src="assets/img/n5.jpg" alt="">
-    </div>
-    <div class="col-md-4 img_platos">
-      <img src="assets/img/n3.jpg" alt="">
-    </div>
 
-
+    <div class="col-md-4 img_platos" *ngFor="let _imagen of imagenes">
+      <img src="{{url+'get-img-imagen/'+_imagen.imagen}}" alt="">
   </div>
+    <div *ngIf="usuario.role=='ROLE_ADMIN'" class='group inicioicon col-sm-3'  data-toggle="modal" data-target="#modalPerfil" >
+        <div id='groupcrop'>
+          <div class='edit '>
+            <i class="fa fa-picture-o camara" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
 <!-- <div class="col-md-12">
@@ -77,7 +238,7 @@
               </div>
 
               <div class="puntuacion" *ngIf="promedio>0">
-                  <p class="info">{{promedio| number:'.0-1'}}</p>
+                <p class="info">{{promedio| number:'.0-1'}}</p>
               </div>
 
               <div class="autofit-col autofit-col-end valor">
@@ -115,23 +276,21 @@
                 <div class="autofit-row">
 
 
-                  <div class="autofit-col autofit-col-expand" >
+                  <div class="autofit-col autofit-col-expand">
                     <div class="autofit-row">
                       <div class="autofit-col autofit-col-expand widget-metadata">
 
-<img src="../../../assets/img/f1.jpg" class="imgpersona">
+                        <img src="../../../assets/img/perfil.jpg" class="imgpersona">
 
                         <a href="#" class="username">{{_comentario.usuario.name}}
                         </a>
                         <!-- <i class="fa fa-trash lapiz" aria-hidden="true"
                         (click)="deleteComentario(_comentario._id)"></i>
                         <i class="fa lapiz fa-edit" aria-hidden="true"></i> -->
-                        <img class="img-lapiz" src="../../../assets/img/Artboard – 29.png"
-                        (click)="deleteComentario(_comentario._id)" alt="">
-                        <img class="img-lapiz"
-                        src="../../../assets/img/Artboard – 30.png" alt="">
+                        <img class="img-lapiz" src="../../../assets/img/Artboard – 29.png" (click)="deleteComentario(_comentario._id)" alt="">
+                        <img class="img-lapiz" src="../../../assets/img/Artboard – 30.png" alt="">
 
-                      <span class="tiempo">hace 3 minutos</span>
+                        <span class="tiempo">hace 3 minutos</span>
 
 
 
@@ -140,10 +299,9 @@
                     <p class="titulo">"{{_comentario.titulo}}"</p>
                     <p>{{_comentario.descripcion}}</p>
 
-                    <p class="calificacion">calificacion
-                        {{ (_comentario.ambiente + _comentario.relacion + _comentario.comida +
-                           _comentario.calidad)/4 | number:'.0-1' }}
-                      </p>
+                    <p class="calificacion">calificacion {{ (_comentario.ambiente + _comentario.relacion + _comentario.comida + _comentario.calidad)/4
+                      | number:'.0-1' }}
+                    </p>
                     <!-- <div class="autofit-row autofit-row-center autofit-float">
                       <div class="autofit-col">
                         <button class="btn responder btn-outline-secondary btn-outline-borderless btn-sm" type="button">

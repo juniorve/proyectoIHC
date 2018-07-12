@@ -14,6 +14,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FormcomentarioComponent } from './components/formcomentario/formcomentario.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RestauranteditComponent } from './components/restaurantedit/restaurant_edit.component';
+import { InicioComponent } from './components/inicio/incio.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'login', component: LoginComponent },
+  { path: 'inicio', component: InicioComponent },
   { path: 'register', component: RegisterComponent }
 
 

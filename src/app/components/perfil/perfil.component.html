@@ -1,7 +1,18 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4 imagen">
-      <img src="assets/img/perfil.jpg" class="img_perfil">
+      <img src="assets/img/perfil.jpg" class="img_perfil" *ngIf="!imagenTemp">
+
+      <img *ngIf="imagenTemp" [src]="imagenTemp" class=" img_perfil ">
+
+      <div class="btnes">
+      <button *ngIf="imagenTemp" class="btn guardar" (clic)="updateUserImg()">guardar</button>
+      <button *ngIf="!imagenTemp" class="btn modificar">modificar</button>
+              <input class='VPcropint' id='VPcropint' name='input' type='file'
+              accept="image/x-png, image/gif, image/jpeg"
+              (change)="fileChangeEvent($event , $event.target.files[0])"
+              ></div>
+
       <p>{{identity.name}} {{identity.surname}}</p>
       <i class="fa redes r_twiter fa-twitter" aria-hidden="true"></i>
       <i class="fa redes r_facebook fa-facebook-official" aria-hidden="true"></i>

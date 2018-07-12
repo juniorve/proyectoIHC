@@ -10,7 +10,8 @@ export class User {
         public password: String,
         public facebook: String,
         public twiter: String,
-        public role: String
+        public role: String,
+        public imagen: String
     ) {
 
     }

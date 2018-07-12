@@ -22,6 +22,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FormcomentarioComponent } from './components/formcomentario/formcomentario.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RestauranteditComponent } from './components/restaurantedit/restaurant_edit.component';
+import { InicioComponent } from './components/inicio/incio.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RestauranteditComponent } from './components/restaurantedit/restaurant_
     PerfilComponent,
     LoginComponent,
     RestauranteditComponent,
+    InicioComponent,
     // ComentariosComponent,
     FooterComponent,
     CardComponent,

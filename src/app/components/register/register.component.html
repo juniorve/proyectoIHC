@@ -24,16 +24,21 @@
                 {{tipo.name}}
               </mat-option>
             </mat-select>
+
             <mat-error *ngIf="tipoControl.hasError('required')">No ha seleccionado tipo de restaurant</mat-error>
           </mat-form-field>
         </div>
 
+
       <input #email="ngModel" name="email" [(ngModel)]="user.email" type="text" name="email" placeholder="Usuario" />
       <input #password="ngModel" name="password" [(ngModel)]="user.password" type="password" name="pass" placeholder="Contraseña" />
       <input type="password" name="cpass" placeholder="Confirme Contraseña" />
+      <a [routerLink]="['/inicio']">Inicio</a>
       <input type="button" name="next" class="next action-button" value="Siguiente" />
     </fieldset>
     <fieldset>
+
+
       <h2 class="fs-title">Redes sociales</h2>
       <input #facebook="ngModel" name="facebook" [(ngModel)]="user.facebook" type="text" name="twitter" placeholder="Twitter" />
       <input #twiter="ngModel" name="twiter" [(ngModel)]="user.twiter" type="text" name="facebook" placeholder="Facebook" />
